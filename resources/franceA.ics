@@ -1,0 +1,230 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:-//education.gouv.fr//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-CALNAME:Calendrier Scolaire - Zone A
+X-WR-CALDESC:Calendrier Scolaire - Zone A
+X-WR-TIMEZONE:Europe/Paris
+BEGIN:VEVENT
+UID:315@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Prérentrée des enseignants
+DTSTART;VALUE=DATE:20150831
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Prérentrée des enseignants - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:316@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Rentrée scolaire des élèves
+DTSTART;VALUE=DATE:20150901
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Rentrée scolaire des élèves - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:317@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de la Toussaint
+DTSTART;VALUE=DATE:20151017
+DTEND;VALUE=DATE:20151102
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de la Toussaint - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:318@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de Noël
+DTSTART;VALUE=DATE:20151219
+DTEND;VALUE=DATE:20160104
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de Noël - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:319@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances d'hiver
+DTSTART;VALUE=DATE:20160213
+DTEND;VALUE=DATE:20160229
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances d'hiver - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:320@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de printemps
+DTSTART;VALUE=DATE:20160409
+DTEND;VALUE=DATE:20160425
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de printemps - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:321@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances d'été
+DTSTART;VALUE=DATE:20160705
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances d'été - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:336@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Prérentrée des enseignants
+DTSTART;VALUE=DATE:20160831
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Prérentrée des enseignants - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:337@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Rentrée scolaire des élèves
+DTSTART;VALUE=DATE:20160901
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Rentrée scolaire des élèves - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:338@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de la Toussaint
+DTSTART;VALUE=DATE:20161019
+DTEND;VALUE=DATE:20161103
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de la Toussaint - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:339@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de Noël
+DTSTART;VALUE=DATE:20161217
+DTEND;VALUE=DATE:20170103
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de Noël - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:340@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances d'hiver
+DTSTART;VALUE=DATE:20170218
+DTEND;VALUE=DATE:20170306
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances d'hiver - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:341@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de printemps
+DTSTART;VALUE=DATE:20170415
+DTEND;VALUE=DATE:20170502
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de printemps - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:342@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances d'été
+DTSTART;VALUE=DATE:20170708
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances d'été - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:408@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Prérentrée des enseignants
+DTSTART;VALUE=DATE:20170901
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Prérentrée des enseignants - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:409@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Rentrée scolaire des élèves
+DTSTART;VALUE=DATE:20170904
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Rentrée scolaire des élèves - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:410@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de la Toussaint
+DTSTART;VALUE=DATE:20171021
+DTEND;VALUE=DATE:20171106
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de la Toussaint - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:411@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de Noël
+DTSTART;VALUE=DATE:20171223
+DTEND;VALUE=DATE:20180108
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de Noël - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:412@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances d'hiver
+DTSTART;VALUE=DATE:20180210
+DTEND;VALUE=DATE:20180226
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances d'hiver - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:413@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances de printemps
+DTSTART;VALUE=DATE:20180407
+DTEND;VALUE=DATE:20180423
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances de printemps - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:414@education.gouv.fr
+DTSTAMP:20150720T135302Z
+DESCRIPTION:Vacances d'été
+DTSTART;VALUE=DATE:20180707
+LOCATION:Besançon\, Bordeaux\, Clermont-Ferrand\, Dijon\, Grenoble\, Limog
+ es\, Lyon\, Poitiers
+SUMMARY:Vacances d'été - Zone A
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
