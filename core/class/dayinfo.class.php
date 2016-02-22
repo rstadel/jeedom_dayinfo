@@ -462,6 +462,7 @@ class dayinfo extends eqLogic {
     $datetoday = date_create("today");
     $diffday = 365;
     $diffend = 365;
+    $summerholiday = 0;
 
     foreach ($events as $event) {
       if (isset($event['DTEND']))
@@ -482,12 +483,28 @@ class dayinfo extends eqLogic {
        }
        log::add('dayinfo', 'debug', 'Event End ' . $event['DTEND'] . ' dans ' . $diff->format('%a'));
         }
-       if ($ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp && $timestamp <= $ical->iCalDateToUnixTimestamp($event['DTEND']))
+       if ($ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp && $timestamp < $ical->iCalDateToUnixTimestamp($event['DTEND']))
        {
          $holiday = '1';
          $nholiday = $event['SUMMARY'];
        }
       }
+      else {
+        if ($event['DESCRIPTION'] == "Vacances d'été" && $ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp && strpos($event['DTSTART'], date(Y))) {
+          //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
+          $summerholiday = 1;
+        }
+        if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves" && $ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp) {
+          //post reprise (label rentrée, date supérieure)
+          $summerholiday = 0;
+        }
+
+      }
+    }
+
+    if ($summerholiday == 1) {
+      $holiday = '1';
+      $nholiday = "Vacances d'été";
     }
 
     log::add('dayinfo', 'debug', 'Holiday ' . $holiday);
