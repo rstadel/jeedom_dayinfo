@@ -404,12 +404,11 @@ class dayinfo extends eqLogic {
   public function getDifftoNextHoliday($country,$region,$format="%a")		{
     $next_holiday = dayinfo::getNextHoliday($country,$region);
 
-    $date_next_holiday = date_create("@".strtotime("today", $next_holiday));
-    $current_date = date_create("@".strtotime("today"));
+    $date_next_holiday = new DateTime(date('Y-m-d', $next_holiday));
+    $current_date = new DateTime('today');
+    $interval = $current_date->diff($date_next_holiday);
 
-    $diff = date_diff($current_date, $date_next_holiday);
-
-    return $diff->format($format);
+    return $interval->format($format);
   }
 
   // For the current date
