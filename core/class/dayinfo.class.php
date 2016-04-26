@@ -493,12 +493,12 @@ class dayinfo extends eqLogic {
        }
       }
       else {
-        if ($event['DESCRIPTION'] == "Vacances d'été" && $ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp && strpos($event['DTSTART'], date(Y))) {
+        if ($event['DESCRIPTION'] == "Vacances d'été") {
           //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
           $debutstamp = $ical->iCalDateToUnixTimestamp($event['DTSTART']);
           $debutete = date_create($event['DTSTART']);
         }
-        if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves" && $ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp) {
+        if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
           //post reprise (label rentrée, date supérieure)
           $finstamp = $ical->iCalDateToUnixTimestamp($event['DTSTART']);
           $finete = date_create($event['DTEND']);
