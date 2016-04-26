@@ -26,13 +26,17 @@ class dayinfo extends eqLogic {
 
 
   public static function cronDaily() {
-    foreach (eqLogic::byType('dayinfo') as $dayinfo) {
-      if ($dayinfo->getIsEnable() == 1) {
+    foreach (eqLogic::byType('dayinfo', true) as $dayinfo) {
         log::add('dayinfo', 'debug', 'pull daily');
         $dayinfo->getInformations();
-      }
     }
-
+  }
+  
+  public static function start() {
+    foreach (eqLogic::byType('dayinfo', true) as $dayinfo) {
+        log::add('dayinfo', 'debug', 'pull start');
+        $dayinfo->getInformations();
+    }
   }
 
   public function postUpdate() {
@@ -491,20 +495,37 @@ class dayinfo extends eqLogic {
       else {
         if ($event['DESCRIPTION'] == "Vacances d'été" && $ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp && strpos($event['DTSTART'], date(Y))) {
           //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
-          $summerholiday = 1;
+          $debutstamp = $ical->iCalDateToUnixTimestamp($event['DTSTART']);
+          $debutete = date_create($event['DTSTART']);
         }
         if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves" && $ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp) {
           //post reprise (label rentrée, date supérieure)
-          $summerholiday = 0;
+          $finstamp = $ical->iCalDateToUnixTimestamp($event['DTSTART']);
+          $finete = date_create($event['DTEND']);
         }
 
       }
     }
 
-    if ($summerholiday == 1) {
-      $holiday = '1';
-      $nholiday = "Vacances d'été";
-    }
+    if ($datetoday < $debutete) {
+        $diff = date_diff($datetoday, $debutete);
+        if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
+          $diffday = $diff->format('%a');
+        }
+        log::add('dayinfo', 'debug', 'Event ' . $event['DTSTART'] . ' dans ' . $diff->format('%a'));
+       }
+
+       if ($datetoday < $finete) {
+       $diff = date_diff($datetoday, $finete);
+       if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
+         $diffend = $diff->format('%a');
+       }
+       log::add('dayinfo', 'debug', 'Event End ' . $event['DTEND'] . ' dans ' . $diff->format('%a'));
+        }
+    if ($debutstamp <= $timestamp && $timestamp < $finstamp) {
+         $holiday = '1';
+        $nholiday = "Vacances d'été";
+       }
 
     log::add('dayinfo', 'debug', 'Holiday ' . $holiday);
     log::add('dayinfo', 'debug', 'Label ' . $nholiday);
