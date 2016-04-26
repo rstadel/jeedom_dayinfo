@@ -512,7 +512,6 @@ class dayinfo extends eqLogic {
         if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
           $diffday = $diff->format('%a');
         }
-        log::add('dayinfo', 'debug', 'Event ' . $event['DTSTART'] . ' dans ' . $diff->format('%a'));
        }
 
        if ($datetoday < $finete) {
@@ -520,8 +519,8 @@ class dayinfo extends eqLogic {
        if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
          $diffend = $diff->format('%a');
        }
-       log::add('dayinfo', 'debug', 'Event End ' . $event['DTEND'] . ' dans ' . $diff->format('%a'));
         }
+        log::add('dayinfo', 'debug', 'Holiday ' . $debutete . ' ' . $datetoday . ' ' . $finete);
     if ($debutstamp <= $timestamp && $timestamp < $finstamp) {
          $holiday = '1';
         $nholiday = "Vacances d'été";
