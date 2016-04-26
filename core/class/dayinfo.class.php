@@ -501,7 +501,7 @@ class dayinfo extends eqLogic {
         if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
           //post reprise (label rentrée, date supérieure)
           $finstamp = $ical->iCalDateToUnixTimestamp($event['DTSTART']);
-          $finete = date_create($event['DTEND']);
+          $finete = date_create($event['DTSTART']);
         }
 
       }
