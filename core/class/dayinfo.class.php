@@ -527,7 +527,7 @@ class dayinfo extends eqLogic {
       }
     }
     //log::add('dayinfo', 'debug', 'Holiday ' . $debutete . ' ' . $datetoday . ' ' . $finete);
-    if ($debutstamp <= $timestamp && $timestamp < $finstamp) {
+    if ($debutete <= $datetoday && $datetoday < $finete) {
       $holiday = '1';
       $nholiday = "Vacances d'été";
     }
