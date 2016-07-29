@@ -604,6 +604,7 @@ class dayinfo extends eqLogic {
   }
 
   public function getZones($country) {
+    $return = array();
     if ($country == "france") {
       $return['A'] = array(
         'value' => 'Zone A',
