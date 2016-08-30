@@ -1,0 +1,8 @@
+{
+	"id" : "dayinfo",
+	"name" : "Informations du Jour",
+	"licence" : "AGPL",
+	"author" : "lunarok",
+	"require" : "2.4",
+	"category" : "organization"
+}
