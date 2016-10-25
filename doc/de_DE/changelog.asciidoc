@@ -1,0 +1,24 @@
+==== 29/12/2015
+
+Correction vacances
+
+==== Version 1.3
+
+Ajout prochaine fin de Vacances
+
+Mise en forme aux standards actuels
+
+==== Version 1.2
+
+Correction vacances précédentes
+
+==== Version 1.1
+
+Ajout d'indicateurs sur la Lune
+
+Ajout des jours fériés pour France, Belgique, Suisse, Canada
+
+
+==== Version 1
+
+Création du plugin

@@ -1,0 +1,25 @@
+==== Informations sur le Jour, pour obtenir les renseignements sur le type de jour en cours
+
+Ce plugin permet d'obtenir les caractéristiques du jour :
+
+- week-end en cours (1 ou 0)
+
+- jour férié en cours (1 ou 0)
+
+- nombre de jours avant le prochain jour férié
+
+- saison actuelle ('Winter', 'Spring', 'Summer', 'Fall')
+
+- nombre de jours avant la prochaine saison
+
+- vacances en cours (1 ou 0)
+
+- label vacances (tel que défini dans le calendrier fourni)
+
+- nombre de jours avant les prochaines vacances
+
+- nombre de jours avant la fin des prochaines vacances
+
+- phase de la lune (valeur de 0 à 1, 0 et 1 étant nouvelle lune, la pleine lune 0.5)
+
+- age de la lune (en jours)
