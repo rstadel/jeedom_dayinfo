@@ -25,11 +25,27 @@
         "Valeur": "Wert",
         "Paramètres": "Parameter",
         "Supprimer": "Löschen",
-        "Sauvegarder": "Speichern"
+        "Sauvegarder": "Speichern",
+        "Configuration avancée": "Configuration avancée",
+        "Equipement": "Equipement",
+        "Commandes": "Commandes"
     },
     "plugins/dayinfo/desktop/js/dayinfo.js": {
         "Nom de l\\'info": "Info Name",
         "Historiser": "Archivieren",
         "Afficher": "Anzeigen"
+    },
+    "plugins/dayinfo/core/class/dayinfo.class.php": {
+        "Vacances": "Vacances",
+        "Prochaines Vacances": "Prochaines Vacances",
+        "Prochaines Fin Vacances": "Prochaines Fin Vacances",
+        "Label Vacances": "Label Vacances",
+        "Phase de la Lune": "Phase de la Lune",
+        "Age de la Lune": "Age de la Lune",
+        "Prochaine Saison": "Prochaine Saison",
+        "Saison": "Saison",
+        "Weekend": "Weekend",
+        "Férié": "Férié",
+        "Prochain Férié": "Prochain Férié"
     }
 }
