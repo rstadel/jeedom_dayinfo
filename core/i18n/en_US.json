@@ -26,9 +26,9 @@
         "Paramètres": "Settings",
         "Supprimer": "Delete",
         "Sauvegarder": "Save",
-        "Configuration avancée": "Configuration avancée",
-        "Equipement": "Equipement",
-        "Commandes": "Commandes"
+        "Configuration avancée": "Advanced setup",
+        "Equipement": "Equipment",
+        "Commandes": "Commands"
     },
     "plugins/dayinfo/desktop/js/dayinfo.js": {
         "Nom de l\\'info": "Info Name",
@@ -36,16 +36,16 @@
         "Afficher": "Show"
     },
     "plugins/dayinfo/core/class/dayinfo.class.php": {
-        "Vacances": "Vacances",
-        "Prochaines Vacances": "Prochaines Vacances",
-        "Prochaines Fin Vacances": "Prochaines Fin Vacances",
-        "Label Vacances": "Label Vacances",
-        "Phase de la Lune": "Phase de la Lune",
-        "Age de la Lune": "Age de la Lune",
-        "Prochaine Saison": "Prochaine Saison",
-        "Saison": "Saison",
+        "Vacances": "Holiday",
+        "Prochaines Vacances": "Next vacation",
+        "Prochaines Fin Vacances": "Next end holiday",
+        "Label Vacances": "Label holiday",
+        "Phase de la Lune": "Phase of the Moon",
+        "Age de la Lune": "Phase of the Moon",
+        "Prochaine Saison": "Next season",
+        "Saison": "Season",
         "Weekend": "Weekend",
-        "Férié": "Férié",
-        "Prochain Férié": "Prochain Férié"
+        "Férié": "holiday",
+        "Prochain Férié": "Next holiday"
     }
 }
