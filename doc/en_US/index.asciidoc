@@ -10,7 +10,7 @@ include::configuration.asciidoc[]
 include::faq.asciidoc[]
 
 '''
-== Troubleshoting
+== Troubleshooting
 include::troubleshoting.asciidoc[]
 
 
