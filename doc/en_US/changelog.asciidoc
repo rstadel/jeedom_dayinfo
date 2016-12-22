@@ -1,6 +1,6 @@
 ==== 29/12/2015
 
-Correction vacances
+Fixed holidays
 
 ==== Version 1.3
 
