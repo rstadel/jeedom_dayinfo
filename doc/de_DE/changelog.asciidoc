@@ -21,4 +21,4 @@ Ajout des jours fériés pour France, Belgique, Suisse, Canada
 
 ==== Version 1
 
-Création du plugin
+Erstellung des Plugins

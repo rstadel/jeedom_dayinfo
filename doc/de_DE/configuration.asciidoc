@@ -1,6 +1,6 @@
-==== Configuration du plugin
+==== Plugin Konfiguration
 
-Le plugin ne comporte pas de configuration générale.
+Das Plugin enthält keine allgemeine Konfiguration.
 
 Sur l'équipement il faut configurer le pays et la zone.
 
