@@ -2,7 +2,7 @@
 
 The plugin does not have general configuration.
 
-Sur l'équipement il faut configurer le pays et la zone.
+On the equipment , set up the country and the area.
 
 Le pays sert à calculer les jours fériés et les zones.
 

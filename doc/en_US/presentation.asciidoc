@@ -2,7 +2,7 @@
 
 This plugin allows to get the features of the day:
 
-- week-end en cours (1 ou 0)
+-current weekend (1 or 0)
 
 - jour férié en cours (1 ou 0)
 
