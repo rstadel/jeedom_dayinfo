@@ -2,8 +2,8 @@
 
 Das Plugin enthält keine allgemeine Konfiguration.
 
-Sur l'équipement il faut configurer le pays et la zone.
+Auf dem Gerät müssen Sie das Land und die Region konfigurieren.
 
-Le pays sert à calculer les jours fériés et les zones.
+Das Land dient dazu, die Feiertage und die Zonen zu berechnen.
 
-La zone sert à calculer les vacances scolaires.
+Das Zone wird verwendet, um die Schulferien zu berechnen.

@@ -1,22 +1,22 @@
 ==== 29/12/2015
 
-Correction vacances
+Ferien Korrektur
 
 ==== Version 1.3
 
-Ajout prochaine fin de Vacances
+Hinzugefügt, nächstes Ferien Ende 
 
-Mise en forme aux standards actuels
+Formatierung der aktuellen Standards
 
 ==== Version 1.2
 
-Correction vacances précédentes
+Korrektur früherer Ferien
 
 ==== Version 1.1
 
-Ajout d'indicateurs sur la Lune
+Hinzufügen von Indikatoren auf dem Mond
 
-Ajout des jours fériés pour France, Belgique, Suisse, Canada
+ Ferientage für Frankreich, Belgien, der Schweiz, Kanada hinzugefügt
 
 
 ==== Version 1

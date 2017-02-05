@@ -1,6 +1,6 @@
 ==== Informations sur le Jour, pour obtenir les renseignements sur le type de jour en cours
 
-Ce plugin permet d'obtenir les caractéristiques du jour :
+Dieses Plugin erlaubt es, die Eigenschaften des Tages zu erhalten :
 
 - week-end en cours (1 ou 0)
 
