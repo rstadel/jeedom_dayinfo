@@ -186,7 +186,6 @@ class dayinfo extends eqLogic {
       $dayinfoCmd->save();
 
       if ($dayinfo->getIsEnable() == 1) {
-        log::add('dayinfo', 'debug', 'pull cron');
         $dayinfo->getInformations();
       }
     }
@@ -508,26 +507,28 @@ class dayinfo extends eqLogic {
             log::add('dayinfo', 'debug', 'Fin Ete ' . $finstamp);
           }
         }
+
+        if ($timestamp < $debutstamp) {
+          log::add('dayinfo', 'debug', 'Debut vacances été');
+          $diff = date_diff($datetoday, $debutete);
+          if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
+            $diffday = $diff->format('%a');
+          }
+        }
+
+        if ($timestamp < $finstamp) {
+          log::add('dayinfo', 'debug', 'Fin vacances été');
+          $diff = date_diff($datetoday, $finete);
+          if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
+            $diffend = $diff->format('%a');
+            $holiday = '1';
+            $nholiday = "Vacances d'été";
+          }
+        }
       }
     }
 
-    if ($timestamp < $debutstamp) {
-      log::add('dayinfo', 'debug', 'Debut vacances été');
-      $diff = date_diff($datetoday, $debutete);
-      if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
-        $diffday = $diff->format('%a');
-      }
-    }
 
-    if ($timestamp < $finstamp) {
-      log::add('dayinfo', 'debug', 'Fin vacances été');
-      $diff = date_diff($datetoday, $finete);
-      if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
-        $diffend = $diff->format('%a');
-        $holiday = '1';
-        $nholiday = "Vacances d'été";
-      }
-    }
 
     log::add('dayinfo', 'debug', 'Holiday ' . $holiday);
     log::add('dayinfo', 'debug', 'Label ' . $nholiday);
