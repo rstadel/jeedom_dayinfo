@@ -140,7 +140,6 @@ $eqLogics = eqLogic::byType('dayinfo');
             <tr>
               <th style="width: 50px;">#</th>
               <th style="width: 250px;">{{Nom}}</th>
-              <th style="width: 200px;">{{Valeur}}</th>
               <th style="width: 150px;">{{Paramètres}}</th>
               <th style="width: 50px;"></th>
             </tr>
