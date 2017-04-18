@@ -471,19 +471,19 @@ class dayinfo extends eqLogic {
       if (isset($event['DTEND'])) {
         $datehol = date_create($event['DTSTART']);
         if ($datetoday < $datehol) {
+            //calcul du début prochaines vacances
           $diff = date_diff($datetoday, $datehol);
           if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
             $diffday = $diff->format('%a');
           }
-          log::add('dayinfo', 'debug', 'Event ' . $event['DTSTART'] . ' dans ' . $diff->format('%a'));
         }
         $datefin = date_create($event['DTEND']);
         if ($datetoday < $datefin) {
+            //calcul de la fin des prochaines vacances
           $diff = date_diff($datetoday, $datefin);
           if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
             $diffend = $diff->format('%a');
           }
-          log::add('dayinfo', 'debug', 'Event End ' . $event['DTEND'] . ' dans ' . $diff->format('%a'));
         }
         if ($datehol <= $datetoday && $datetoday < $datefin)
         {
