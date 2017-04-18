@@ -493,7 +493,7 @@ class dayinfo extends eqLogic {
           //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
           $datehol = date_create($event['DTSTART']);
           $diff = date_diff($datetoday, $datehol);
-          if ( $diff > 0 && $diff < 365 && $datehol > $datetoday ) {
+          if ( $diff->format('%a') > 0 && $diff->format('%a') < 365 && $datehol > $datetoday ) {
             $debutete = date_create($event['DTSTART']);
           }
         }
@@ -501,7 +501,7 @@ class dayinfo extends eqLogic {
           //post reprise (label rentrée, date supérieure)
           $datehol = date_create($event['DTSTART']);
           $diff = date_diff($datetoday, $datehol);
-          if ( $diff > 0 && $diff < 365 && $datehol > $datetoday ) {
+          if ( $diff->format('%a') > 0 && $diff->format('%a') < 365 && $datehol > $datetoday ) {
             $finete = date_create($event['DTSTART']);
           }
         }
