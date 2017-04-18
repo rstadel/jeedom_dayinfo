@@ -486,7 +486,7 @@ class dayinfo extends eqLogic {
           }
           log::add('dayinfo', 'debug', 'Event End ' . $event['DTEND'] . ' dans ' . $diff->format('%a'));
         }
-        if ($ical->iCalDateToUnixTimestamp($event['DTSTART']) <= $timestamp && $timestamp < $ical->iCalDateToUnixTimestamp($event['DTEND']))
+        if ($datehol <= $datetoday && $datetoday < $datefin)
         {
           $holiday = '1';
           $nholiday = $event['SUMMARY'];
