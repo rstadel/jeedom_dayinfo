@@ -464,8 +464,6 @@ class dayinfo extends eqLogic {
     $datetoday = date_create("today");
     $diffday = 365;
     $diffend = 365;
-    $debutstamp = '';
-    $finstamp = '';
 
     foreach ($events as $event) {
       if (isset($event['DTEND'])) {
@@ -493,13 +491,17 @@ class dayinfo extends eqLogic {
       } else {
         if ($event['DESCRIPTION'] == "Vacances d'été") {
           //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
-          if ( ($debutstamp == '' || $ical->iCalDateToUnixTimestamp($event['DTSTART']) < $debutstamp ) && $ical->iCalDateToUnixTimestamp($event['DTSTART']) > $timestamp ) {
+          $datehol = date_create($event['DTSTART']);
+          $diff = date_diff($datetoday, $datehol);
+          if ( $diff > 0 && $diff < 365 && $datehol > $datetoday ) {
             $debutete = date_create($event['DTSTART']);
           }
         }
         if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
           //post reprise (label rentrée, date supérieure)
-          if ( ($finstamp == '' || $ical->iCalDateToUnixTimestamp($event['DTSTART']) < $finstamp ) && $ical->iCalDateToUnixTimestamp($event['DTSTART']) > $timestamp ) {
+          $datehol = date_create($event['DTSTART']);
+          $diff = date_diff($datetoday, $datehol);
+          if ( $diff > 0 && $diff < 365 && $datehol > $datetoday ) {
             $finete = date_create($event['DTSTART']);
           }
         }
