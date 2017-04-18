@@ -494,38 +494,38 @@ class dayinfo extends eqLogic {
         if ($event['DESCRIPTION'] == "Vacances d'été") {
           //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
           if ( ($debutstamp == '' || $ical->iCalDateToUnixTimestamp($event['DTSTART']) < $debutstamp ) && $ical->iCalDateToUnixTimestamp($event['DTSTART']) > $timestamp ) {
-            $debutstamp = $ical->iCalDateToUnixTimestamp($event['DTSTART']);
             $debutete = date_create($event['DTSTART']);
-            log::add('dayinfo', 'debug', 'Debut Ete ' . $debutstamp);
           }
         }
         if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
           //post reprise (label rentrée, date supérieure)
           if ( ($finstamp == '' || $ical->iCalDateToUnixTimestamp($event['DTSTART']) < $finstamp ) && $ical->iCalDateToUnixTimestamp($event['DTSTART']) > $timestamp ) {
-            $finstamp = $ical->iCalDateToUnixTimestamp($event['DTSTART']);
             $finete = date_create($event['DTSTART']);
-            log::add('dayinfo', 'debug', 'Fin Ete ' . $finstamp);
           }
         }
 
-        if ($timestamp < $debutstamp) {
-          log::add('dayinfo', 'debug', 'Debut vacances été');
-          $diff = date_diff($datetoday, $debutete);
-          if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
-            $diffday = $diff->format('%a');
-          }
-        }
 
-        if ($timestamp < $finstamp) {
-          log::add('dayinfo', 'debug', 'Fin vacances été');
-          $diff = date_diff($datetoday, $finete);
-          if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
-            $diffend = $diff->format('%a');
-            $holiday = '1';
-            $nholiday = "Vacances d'été";
-          }
-        }
       }
+    }
+
+    if ($datetoday < $debutete) {
+      $diff = date_diff($datetoday, $debutete);
+      if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
+        $diffday = $diff->format('%a');
+      }
+    }
+
+    if ($datetoday < $finete) {
+      $diff = date_diff($datetoday, $finete);
+      if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
+        $diffend = $diff->format('%a');
+      }
+    }
+
+    if ($debutete <= $datetoday && $datetoday < $finete)
+    {
+      $holiday = '1';
+      $nholiday = "Vacances d'été";
     }
 
 
