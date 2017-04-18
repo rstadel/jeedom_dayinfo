@@ -42,9 +42,6 @@ function addCmdToTable(_cmd) {
         tr += '<td>';
 	tr += '<input class="cmdAttr form-control input-sm" data-l1key="name" style="width : 140px;" placeholder="{{Nom de l\'info}}"></td>';
       tr += '<td>';
-      tr += '<span class="cmdAttr" data-l1key="logicalId"></span>';
-      tr += '</td>';
-      tr += '<td>';
       tr += '<span class="cmdAttr" data-l1key="configuration" data-l2key="value"></span>';
       tr += '</td>';
         tr += '<td>';
@@ -55,7 +52,8 @@ function addCmdToTable(_cmd) {
         tr += '</td>';
         tr += '<td>';
         if (is_numeric(_cmd.id)) {
-            tr += '<a class="btn btn-default btn-xs cmdAction expertModeVisible" data-action="configure"><i class="fa fa-cogs"></i></a> ';
+          tr += '<a class="btn btn-default btn-xs cmdAction expertModeVisible" data-action="configure"><i class="fa fa-cogs"></i></a> ';
+          tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fa fa-rss"></i> {{Tester}}</a>';
         }
         tr += '</td>';
         tr += '</tr>';
