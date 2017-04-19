@@ -175,7 +175,7 @@
             $holidays = dayinfo::getHolidays($country,$region,$year);
             $return = (in_array($timestamp, $holidays)) ? 1 : 0;
             $this->checkAndUpdateCmd('redday', $return);
-            log::add('dayinfo', 'debug', 'Redday ' . $redday);
+            log::add('dayinfo', 'debug', 'Redday ' . $return);
         }
 
         /*
@@ -409,9 +409,9 @@
             $moon = new Solaris\MoonPhase();
             $age = round( $moon->age(), 1 ); // age de la lune en jour
             $phase = $moon->phase(); //0 et 1 nouvelle lune, 0,5 pleine lune
-            log::add('dayinfo', 'debug', 'Phase Lune ' . $phase);
+            log::add('dayinfo', 'debug', 'Phase Lune ' . round($phase,2));
             log::add('dayinfo', 'debug', 'Age Lune ' . $age);
-            $this->checkAndUpdateCmd('moon', $phase);
+            $this->checkAndUpdateCmd('moon', round($phase,2));
             $this->checkAndUpdateCmd('amoon', $age);
         }
 
@@ -528,11 +528,9 @@
 
         public function getInfo($_infos = '') {
             $return = array();
-
             $return['id'] = array(
                 'value' => $this->getId(),
             );
-
             return $return;
         }
 
