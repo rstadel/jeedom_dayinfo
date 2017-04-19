@@ -417,6 +417,8 @@
 
         // Moon
         public function whatHolidays() {
+            $country = $this->getConfiguration('country');
+            $region = $this->getConfiguration('zone');
             $holiday = '0';
             $nholiday = '-';
             //build calendar ID
@@ -515,18 +517,13 @@
         }
 
         public function getInformations() {
-
             //call methods to compute and update
             $this->isTodayWeekend();
             $this->isNotWorkable();
-
-            $nredday = dayinfo::getDifftoNextHoliday($country,$region);
-
+            $this->getDifftoNextHoliday();
             $this->whatSeason();
             $this->whatMoon();
             $this->whatHolidays();
-
-            return ;
         }
 
         public function getInfo($_infos = '') {
