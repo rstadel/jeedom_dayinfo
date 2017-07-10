@@ -469,7 +469,7 @@
                     if (strpos($event['DESCRIPTION'],'été') !== false) {
                         //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
                         $datehol = date_create($event['DTSTART']);
-                        $diff = date_diff($datetoday, $datehol);
+                        log::add('dayinfo', 'debug', 'Debut ' . $datehol);
                         if (date_format($datetoday,'Y') == date_format($datehol,'Y') ) {
                             $debutete = date_create($event['DTSTART']);
                             log::add('dayinfo', 'debug', 'Debut ' . $debutete);
@@ -478,7 +478,7 @@
                     if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
                         //post reprise (label rentrée, date supérieure)
                         $datehol = date_create($event['DTSTART']);
-                        $diff = date_diff($datetoday, $datehol);
+                        log::add('dayinfo', 'debug', 'Fin ' . $datehol);
                         if (date_format($datetoday,'Y') == date_format($datehol,'Y') ) {
                             $finete = date_create($event['DTSTART']);
                             log::add('dayinfo', 'debug', 'Fin ' . $finete);
