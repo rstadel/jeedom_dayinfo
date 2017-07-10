@@ -472,8 +472,8 @@
                         $diff = date_diff($datetoday, $datehol);
                         if (date_format($datetoday,'Y') == date_format($datehol,'Y') ) {
                             $debutete = date_create($event['DTSTART']);
+                            log::add('dayinfo', 'debug', 'Debut ' . $debutete);
                         }
-                        log::add('dayinfo', 'debug', 'Debut ' . date_format($datehol,'Y'));
                     }
                     if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
                         //post reprise (label rentrée, date supérieure)
@@ -481,11 +481,9 @@
                         $diff = date_diff($datetoday, $datehol);
                         if (date_format($datetoday,'Y') == date_format($datehol,'Y') ) {
                             $finete = date_create($event['DTSTART']);
+                            log::add('dayinfo', 'debug', 'Fin ' . $finete);
                         }
-                        log::add('dayinfo', 'debug', 'Fin ' . date_format($datehol,'Y'));
                     }
-
-
                 }
             }
 
@@ -508,7 +506,6 @@
                 $holiday = '1';
                 $nholiday = "Vacances d'été";
             }
-            log::add('dayinfo', 'debug', 'Ete ' . $debutete . ' ' . $datetoday . ' ' . $finete);
             log::add('dayinfo', 'debug', 'Holiday ' . $holiday);
             log::add('dayinfo', 'debug', 'Label ' . $nholiday);
             log::add('dayinfo', 'debug', 'Next Holiday ' . $diffday);
