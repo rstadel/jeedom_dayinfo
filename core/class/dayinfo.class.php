@@ -470,7 +470,7 @@
                         //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
                         $datehol = date_create($event['DTSTART']);
                         $diff = date_diff($datetoday, $datehol);
-                        if ( $diff->format('%a') > 0 && $diff->format('%a') < 365 && $datehol > $datetoday ) {
+                        if (date('Y',strtotime($datetoday)) == date('Y',strtotime($datehol)) ) {
                             $debutete = date_create($event['DTSTART']);
                         }
                     }
@@ -478,7 +478,7 @@
                         //post reprise (label rentrée, date supérieure)
                         $datehol = date_create($event['DTSTART']);
                         $diff = date_diff($datetoday, $datehol);
-                        if ( $diff->format('%a') > 0 && $diff->format('%a') < 365 && $datehol > $datetoday ) {
+                        if (date('Y',strtotime($datetoday)) == date('Y',strtotime($datehol)) ) {
                             $finete = date_create($event['DTSTART']);
                         }
                     }
