@@ -506,6 +506,7 @@
                 $holiday = '1';
                 $nholiday = "Vacances d'été";
             }
+            log::add('dayinfo', 'debug', 'Ete ' . $debutete . ' ' . $datetoday . ' ' . $finete);
             log::add('dayinfo', 'debug', 'Holiday ' . $holiday);
             log::add('dayinfo', 'debug', 'Label ' . $nholiday);
             log::add('dayinfo', 'debug', 'Next Holiday ' . $diffday);
