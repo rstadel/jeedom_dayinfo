@@ -466,7 +466,7 @@
                         $nholiday = $event['SUMMARY'];
                     }
                 } else {
-                    if ($event['DESCRIPTION'] == "Vacances d'été") {
+                    if (strpos($event['DESCRIPTION'],'été') !== false) {
                         //post debut vacances d'été (label vacances, date supérieure et on est bien sur l'année en cours)
                         $datehol = date_create($event['DTSTART']);
                         $diff = date_diff($datetoday, $datehol);
@@ -506,7 +506,7 @@
                 $holiday = '1';
                 $nholiday = "Vacances d'été";
             }
-            log::add('dayinfo', 'debug', 'Ete ' . $debutete . ' ' . $datetoday . ' ' . $finete);
+            //log::add('dayinfo', 'debug', 'Ete ' . $debutete . ' ' . $datetoday . ' ' . $finete);
             log::add('dayinfo', 'debug', 'Holiday ' . $holiday);
             log::add('dayinfo', 'debug', 'Label ' . $nholiday);
             log::add('dayinfo', 'debug', 'Next Holiday ' . $diffday);
