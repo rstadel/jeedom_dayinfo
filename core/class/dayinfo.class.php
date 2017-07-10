@@ -471,16 +471,16 @@
                         $datehol = date_create($event['DTSTART']);
                         log::add('dayinfo', 'debug', 'Debut ' . $datehol);
                         if (date_format($datetoday,'Y') == date_format($datehol,'Y') ) {
-                            $debutete = date_create($event['DTSTART']);
+                            $debutete = $datehol;
                             log::add('dayinfo', 'debug', 'Debut ' . $debutete);
                         }
                     }
                     if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
                         //post reprise (label rentrée, date supérieure)
                         $datehol = date_create($event['DTSTART']);
-                        log::add('dayinfo', 'debug', 'Fin ' . $datehol);
+                        log::add('dayinfo', 'debug', 'Fin ' . date_format($datetoday,'Y') . ' ' . date_format($datehol,'Y'));
                         if (date_format($datetoday,'Y') == date_format($datehol,'Y') ) {
-                            $finete = date_create($event['DTSTART']);
+                            $finete = $datehol;
                             log::add('dayinfo', 'debug', 'Fin ' . $finete);
                         }
                     }
