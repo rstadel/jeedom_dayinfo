@@ -471,7 +471,7 @@
                         $datehol = date_create($event['DTSTART']);
                         if (date_format($datetoday,'Y') === date_format($datehol,'Y') ) {
                             $debutete = $datehol;
-                            log::add('dayinfo', 'debug', 'Debut ' . $debutete);
+                            //log::add('dayinfo', 'debug', 'Debut ' . $debutete);
                         }
                     }
                     if ($event['DESCRIPTION'] == "Rentrée scolaire des élèves") {
@@ -480,7 +480,7 @@
                         //log::add('dayinfo', 'debug', 'Fin ' . date_format($datetoday,'Y') . ' ' . date_format($datehol,'Y'));
                         if (date_format($datetoday,'Y') === date_format($datehol,'Y') ) {
                             $finete = $datehol;
-                            log::add('dayinfo', 'debug', 'Fin ' . $finete);
+                            //log::add('dayinfo', 'debug', 'Fin ' . $finete);
                         }
                     }
                 }
