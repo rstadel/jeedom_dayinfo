@@ -1,0 +1,41 @@
+{
+    "name": "various",
+    "commands": [
+        {
+            "name": "Saison",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "various"
+            },
+            "logicalId": "various:season"
+        },
+        {
+            "name": "Prochaine Saison",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "various"
+            },
+            "logicalId": "various:nextseason"
+        },
+        {
+            "name": "Weekend",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "various"
+            },
+            "logicalId": "various:weekend"
+        }
+   ]
+}

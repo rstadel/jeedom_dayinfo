@@ -1,0 +1,53 @@
+{
+    "name": "calendar",
+    "commands": [
+        {
+            "name": "Evenement (statut)",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:event"
+        },
+        {
+            "name": "Evenement (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:eventlabel"
+        },
+        {
+            "name": "Prochaine fin évènement",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:nextend"
+        },
+        {
+            "name": "Prochain début évènement",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:nextbegin"
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "name": "holidays",
+    "commands": [
+        {
+            "name": "Vacances (statut)",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "holidays"
+            },
+            "logicalId": "holidays:day"
+        },
+        {
+            "name": "Vacances (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "holidays"
+            },
+            "logicalId": "holidays:daylabel"
+        },
+        {
+            "name": "Prochaine fin de vacances",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "holidays"
+            },
+            "logicalId": "holidays:nextend"
+        },
+        {
+            "name": "Prochain début de vacances",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "holidays"
+            },
+            "logicalId": "holidays:nextbegin"
+        }
+    ]
+}

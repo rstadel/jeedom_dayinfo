@@ -1,0 +1,29 @@
+{
+    "name": "moon",
+    "commands": [
+        {
+            "name": "Phase de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:phase"
+        },
+        {
+            "name": "Age de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:age"
+        }
+    ]
+}

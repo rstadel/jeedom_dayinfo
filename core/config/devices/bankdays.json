@@ -1,0 +1,53 @@
+{
+    "name": "bankdays",
+    "commands": [
+        {
+            "name": "Prochain jour férié (jours)",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "bankdays"
+            },
+            "logicalId": "bankdays:nextdays"
+        },
+        {
+            "name": "Prochain jour férié (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "bankdays"
+            },
+            "logicalId": "bankdays:nextlabel"
+        },
+        {
+            "name": "Jour férié",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "bankdays"
+            },
+            "logicalId": "bankdays:bankday"
+        },
+        {
+            "name": "Jour férié (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "bankdays"
+            },
+            "logicalId": "bankdays:daylabel"
+        }
+   ]
+}
