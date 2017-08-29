@@ -24,44 +24,6 @@ try {
         throw new Exception(__('401 - Accès non autorisé', __FILE__));
     }
 
-    if (init('action') == 'getZones') {
-            ajax::success(dayinfo::getZones(init('id')));
-    }
-
-    if (init('action') == 'confZone') {
-      if (init('id') != '') {
-        $dayinfo = dayinfo::byId(init('id'));
-          ajax::success($dayinfo->getConfiguration('zone'));
-      } else {
-        ajax::success('');
-      }
-
-    }
-
-     if (init('action') == 'getdayinfo') {
-        $dayinfo = dayinfo::byId(init('id'));
-        if (!is_object($dayinfo)) {
-            throw new Exception(__('dayinfo inconnu verifié l\'id', __FILE__));
-        }
-        $return = utils::o2a($dayinfo);
-        $return['cmd'] = array();
-        foreach ($dayinfo->getCmd() as $cmd) {
-            $cmd_info = utils::o2a($cmd);
-            $cmd_info['value'] = $cmd->execCmd(null, 0);
-            $return['cmd'][] = $cmd_info;
-        }
-        ajax::success($return);
-     }
-
-     if (init('action') == 'getModuleInfo') {
-            $eqLogic = dayinfo::byId(init('id'));
-            if (!is_object($eqLogic)) {
-            throw new Exception(__('{{dayinfo eqLogic non trouvé}} : ', __FILE__) . init('id'));
-                }
-            ajax::success($eqLogic->getInfo());
-        }
-
-
     throw new Exception(__('Aucune methode correspondante à : ', __FILE__) . init('action'));
     /*     * *********Catch exeption*************** */
 } catch (Exception $e) {

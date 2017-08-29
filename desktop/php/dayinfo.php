@@ -108,24 +108,36 @@ $eqLogics = eqLogic::byType('dayinfo');
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="col-sm-3 control-label">{{Pays}}</label>
-              <div class="col-sm-3">
-                <select class="form-control eqLogicAttr configuration" id="selCountry" data-l1key="configuration" data-l2key="country">
-                  <option value="france">{{France}}</option>
-                  <option value="belgique">{{Belgique}}</option>
-                  <option value="suisse">{{Suisse}}</option>
-                  <option value="canada">{{Canada}}</option>
-                </select>
-              </div>
+            <div id="geolocEq" class="form-group" style="display:none">
+                <label class="col-sm-3 control-label">{{Localisation à utiliser}}</label>
+                <div class="col-sm-3">
+                    <select class="form-control eqLogicAttr configuration" id="geoloc" data-l1key="configuration" data-l2key="geoloc">
+                        <?php
+                        if (class_exists('geotravCmd')) {
+                            foreach (eqLogic::byType('geotrav') as $geoloc) {
+                                if ($geoloc->getConfiguration('type') == 'location') {
+                                    echo '<option value="' . $geoloc->getId() . '">' . $geoloc->getName() . '</option>';
+                                }
+                            }
+                        } else {
+                            echo '<option value="">Pas de localisation disponible</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group">
-              <label class="col-sm-3 control-label">{{Zone}}</label>
-              <div class="col-sm-3">
-                <select class="form-control eqLogicAttr configuration" id="selZones" data-l1key="configuration" data-l2key="zone">
-                </select>
-              </div>
+            <div id="geolocEq" class="form-group" style="display:none">
+                <label class="col-sm-3 control-label">{{Type d'informations}}</label>
+                <div class="col-sm-3">
+                    <select class="form-control eqLogicAttr configuration" id="geoloc" data-l1key="configuration" data-l2key="type">
+                        <option value="bankdays">Jours fériés</option>
+                        <option value="calendar">Calendrier iCal</option>
+                        <option value="holidays">Vacances scolaires</option>
+                        <option value="moon">Lune</option>
+                        <option value="various">Divers</option>
+                    </select>
+                </div>
             </div>
 
           </fieldset>
