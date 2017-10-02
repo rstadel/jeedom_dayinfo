@@ -242,7 +242,7 @@ class dayinfo extends eqLogic {
         log::add('dayinfo', 'debug', 'Season ' . $aseason);
         log::add('dayinfo', 'debug', 'Next Season ' . $nseason);
         $this->checkAndUpdateCmd('various:season', $aseason);
-        $this->checkAndUpdateCmd('various:nextseasonè', $nseason);
+        $this->checkAndUpdateCmd('various:nextseason', $nseason);
     }
 
     // Moon
