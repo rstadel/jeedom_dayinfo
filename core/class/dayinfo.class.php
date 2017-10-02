@@ -56,7 +56,7 @@ class dayinfo extends eqLogic {
       $this->isTodayWeekend();
       $this->whatSeason();
     }
-    if ($this->getConfiguration('type','all') == 'all') {
+    if ($this->getConfiguration('type') == 'all') {
       $this->whatMoon();
       $this->whatHolidays();
       $this->isNotWorkable();
