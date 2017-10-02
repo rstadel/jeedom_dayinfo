@@ -271,7 +271,7 @@ class dayinfo extends eqLogic {
         //build calendar ID
         if ($country == 'france') {
             $departement = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:department')->execCmd();
-            if (strpos($department,'97') == true) {
+            if (strpos($departement,'97') == true) {
                 log::add('dayinfo', 'error', 'Calendrier des DOM TOM non pris en charge');
                 return;
             }
