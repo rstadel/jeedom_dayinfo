@@ -1,0 +1,53 @@
+/*$canton_inarray = array(
+    mktime(0, 0, 0, 1,  2,  $year) => array("AG", "BE", "FR", "GL", "JU", "LU", "NE", "OW", "SH", "SO", "VD", "ZG", "ZH"),
+    mktime(0, 0, 0, 1,  6,  $year) => array("SZ", "TI", "UR"),
+    mktime(0, 0, 0, 3,  1,  $year) => array("NE"),
+    mktime(0, 0, 0, 3, 19,  $year) => array(/*"LU", */"NW", "SZ", "TI", "UR", "VS"), // LU demi journee ???
+        mktime(0, 0, 0, 5,  1,  $year) => array("BL", "BS", "GE", "JU", "NE", "SH", "TI", "UR", "ZH"),
+        mktime(0, 0, 0, 6, 23,  $year) => array("JU"),
+        mktime(0, 0, 0, 6, 29,  $year) => array("TI"),
+        mktime(0, 0, 0, 8, 15,  $year) => array("AG", "AI", "FR", "JU", "LU", "NW", "OW", "SO", "SZ", "TI", "UR", "VS", "ZG"),
+        mktime(0, 0, 0, 9, 25,  $year) => array("OW"),
+        mktime(0, 0, 0, 11, 1,  $year) => array("AG", "AI", "FR", "GL", "JU", "LU", "NW", "OW", "SG", "SO", "TI", "UR", "VS", "ZG"),
+        mktime(0, 0, 0, 12, 8,  $year) => array("AG", "FR", "LU", "NW", "OW", "TI", "UR", "VS", "ZG"),
+        mktime(0, 0, 0, 12,31,  $year) => array("GE")
+    );
+    $canton_outarray = array( // not in array
+        mktime(0, 0, 0, $easterMonth, $easterDay - 2,  $easterYear) => array("TI", "VS"), // vendredi saint
+        mktime(0, 0, 0, 12,26,  $year) => array("GE", "JU", "NE", "VD", "VS"), // saint etienne // NE si 25/12 dimanche
+    );
+
+    if ($region == "NE" && date("N", mktime(0, 0, 0, 12, 25, $year)) == 7) { // Si region NE et 25/12 dimanche
+        $holidays[] = mktime(0, 0, 0, 12,26,  $year); // saint etienne
+    }
+
+    if ($region == "GL") {
+        //		mktime(0, 0, 0, 1,  1,  $year) => array("GL"), // fahrtsfest
+        $holidays[] = strtotime("first thursday of april", mktime(0, 0, 0, 1,  1,  $year));
+    }
+
+    $fetedieu_array = array("AG", "AI", "FR", "JU", "LU", /*"NE", */"NW", "OW", "SO", "SZ", "TI", "UR", "VS", "ZG"); // NE 2 communes seulement
+    if (in_array($region, $fetedieu_array)) {
+        $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay + 60, $easterYear); // Jeudi qui suit le Dimanche de la Trinite (Dimanche qui suit la Pentecote)
+    }
+
+    if ($region == "GE") { // "jeune genevois" => array("GE")
+        $firstdimofsept = strtotime("first sunday of september", mktime(0, 0, 0, 1,  1,  $year));
+        $holidays[] = strtotime("+4 days", $firstdimofsept);
+    }
+
+    if ($region == "NE" || $region == "VD") { // "jeune federal" => array("NE", "VD")
+        $thirddimofsept = strtotime("third sunday of september", mktime(0, 0, 0, 1,  1,  $year));
+        $holidays[] = strtotime("+1 days", $thirddimofsept);
+    }
+
+    foreach($canton_inarray as $date => $inarray) {
+        if (in_array($region, $inarray)) {
+            $holidays[] = $date;
+        }
+    }
+    foreach($canton_outarray as $date => $outarray) {
+        if (!empty($region) && !in_array($region, $outarray)) {
+            $holidays[] = $date;
+        }
+    }*/

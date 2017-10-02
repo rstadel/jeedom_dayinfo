@@ -105,8 +105,7 @@ class dayinfo extends eqLogic {
 
         $holidays = array();
 
-        if ($country == "france")
-        {
+        if ($country == "france") {
             // Dates fixes
             $holidays[] = mktime(0, 0, 0, 1,  1,  $year);  // 1er janvier
             $holidays[] = mktime(0, 0, 0, 5,  1,  $year);  // Fête du travail
@@ -122,32 +121,21 @@ class dayinfo extends eqLogic {
             $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay + 39, $easterYear); // Ascension
             $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay + 50, $easterYear); // Lundi Pentecote
 
-            if ($region == "AL") {
+            if ($region == "54"  || $region == "55" || $region == "57" || $region == "67" || $region == "68" || $region == "88" || $region == "90") {
                 $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay - 2,  $easterYear); // Vendredi Saint
                 $holidays[] = mktime(0, 0, 0, 12, 26, $year);  // Saint Etienne
-            } else if ($region == "martinique") {
+            } else if ($region == "972") {
                 $holidays[] = mktime(0, 0, 0, 5, 22, $year);  // Abolition esclavage
-                $antilles = true;
-            } else if ($region == "guadeloupe") {
+            } else if ($region == "971") {
                 $holidays[] = mktime(0, 0, 0, 5, 27, $year);  // Abolition esclavage
-                $antilles = true;
-            } else if ($region == "saint-martin") {
-                $holidays[] = mktime(0, 0, 0, 5, 27, $year);  // Abolition esclavage
-                $antilles = true;
-            } else if ($region == "guyane") {
-                $holidays[] = mktime(0, 0, 0, 6, 10, $year);  // Abolition esclavage
-            } else if ($region == "saint-barthelemy") {
-                $holidays[] = mktime(0, 0, 0, 10, 9, $year);  // Abolition esclavage
-                $antilles = true;
-            } else if ($region == "reunion") {
-                $holidays[] = mktime(0, 0, 0, 12, 20, $year);  // Abolition esclavage
-            }
-
-            if ($region == "guadeloupe" || $region == "saint-martin" || $region == "saint-barthelemy") {
                 $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay - 47,  $easterYear); // Mardi Gras
                 $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay - 46,  $easterYear); // Mercredi Gras
                 $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay - 2,  $easterYear); // Vendredi Saint
                 $holidays[] = mktime(0, 0, 0, 11, 2, $year);  // Fete des Morts
+            } else if ($region == "973") {
+                $holidays[] = mktime(0, 0, 0, 6, 10, $year);  // Abolition esclavage
+            } else if ($region == "974") {
+                $holidays[] = mktime(0, 0, 0, 12, 20, $year);  // Abolition esclavage
             }
         }
         else if ($country == "belgique")
@@ -178,59 +166,6 @@ class dayinfo extends eqLogic {
             $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay + 39, $easterYear); // Ascension
             $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay + 50, $easterYear); // Lundi Pentecote
 
-            $canton_inarray = array(
-                mktime(0, 0, 0, 1,  2,  $year) => array("AG", "BE", "FR", "GL", "JU", "LU", "NE", "OW", "SH", "SO", "VD", "ZG", "ZH"),
-                mktime(0, 0, 0, 1,  6,  $year) => array("SZ", "TI", "UR"),
-                mktime(0, 0, 0, 3,  1,  $year) => array("NE"),
-                mktime(0, 0, 0, 3, 19,  $year) => array(/*"LU", */"NW", "SZ", "TI", "UR", "VS"), // LU demi journee ???
-                    mktime(0, 0, 0, 5,  1,  $year) => array("BL", "BS", "GE", "JU", "NE", "SH", "TI", "UR", "ZH"),
-                    mktime(0, 0, 0, 6, 23,  $year) => array("JU"),
-                    mktime(0, 0, 0, 6, 29,  $year) => array("TI"),
-                    mktime(0, 0, 0, 8, 15,  $year) => array("AG", "AI", "FR", "JU", "LU", "NW", "OW", "SO", "SZ", "TI", "UR", "VS", "ZG"),
-                    mktime(0, 0, 0, 9, 25,  $year) => array("OW"),
-                    mktime(0, 0, 0, 11, 1,  $year) => array("AG", "AI", "FR", "GL", "JU", "LU", "NW", "OW", "SG", "SO", "TI", "UR", "VS", "ZG"),
-                    mktime(0, 0, 0, 12, 8,  $year) => array("AG", "FR", "LU", "NW", "OW", "TI", "UR", "VS", "ZG"),
-                    mktime(0, 0, 0, 12,31,  $year) => array("GE")
-                );
-                $canton_outarray = array( // not in array
-                    mktime(0, 0, 0, $easterMonth, $easterDay - 2,  $easterYear) => array("TI", "VS"), // vendredi saint
-                    mktime(0, 0, 0, 12,26,  $year) => array("GE", "JU", "NE", "VD", "VS"), // saint etienne // NE si 25/12 dimanche
-                );
-
-                if ($region == "NE" && date("N", mktime(0, 0, 0, 12, 25, $year)) == 7) { // Si region NE et 25/12 dimanche
-                    $holidays[] = mktime(0, 0, 0, 12,26,  $year); // saint etienne
-                }
-
-                if ($region == "GL") {
-                    //		mktime(0, 0, 0, 1,  1,  $year) => array("GL"), // fahrtsfest
-                    $holidays[] = strtotime("first thursday of april", mktime(0, 0, 0, 1,  1,  $year));
-                }
-
-                $fetedieu_array = array("AG", "AI", "FR", "JU", "LU", /*"NE", */"NW", "OW", "SO", "SZ", "TI", "UR", "VS", "ZG"); // NE 2 communes seulement
-                if (in_array($region, $fetedieu_array)) {
-                    $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay + 60, $easterYear); // Jeudi qui suit le Dimanche de la Trinite (Dimanche qui suit la Pentecote)
-                }
-
-                if ($region == "GE") { // "jeune genevois" => array("GE")
-                    $firstdimofsept = strtotime("first sunday of september", mktime(0, 0, 0, 1,  1,  $year));
-                    $holidays[] = strtotime("+4 days", $firstdimofsept);
-                }
-
-                if ($region == "NE" || $region == "VD") { // "jeune federal" => array("NE", "VD")
-                    $thirddimofsept = strtotime("third sunday of september", mktime(0, 0, 0, 1,  1,  $year));
-                    $holidays[] = strtotime("+1 days", $thirddimofsept);
-                }
-
-                foreach($canton_inarray as $date => $inarray) {
-                    if (in_array($region, $inarray)) {
-                        $holidays[] = $date;
-                    }
-                }
-                foreach($canton_outarray as $date => $outarray) {
-                    if (!empty($region) && !in_array($region, $outarray)) {
-                        $holidays[] = $date;
-                    }
-                }
             }
             else if ($country == "canada")
             {
@@ -253,13 +188,6 @@ class dayinfo extends eqLogic {
                     }
                     $holidays[] = mktime(0, 0, 0, 6, 24,  $year); // Fete nationale (Quebec)
                 }
-                /*	if () {// Ville particuliere ???
-                $holidays[] = strtotime("first monday of august", mktime(0, 0, 0, 1,  1,  $year)); // Fete Civique
-            }
-            */
-            if ($region != "QC") {
-                $holidays[] = mktime(0, 0, 0, 11, 11, $year);  // Armistice 1918
-            }
         }
         sort($holidays);
         return $holidays;
@@ -327,7 +255,7 @@ class dayinfo extends eqLogic {
         $name = $moon->phase_name();
         log::add('dayinfo', 'debug', 'Phase Lune ' . $phase);
         log::add('dayinfo', 'debug', 'Age Lune ' . $age);
-        $this->checkAndUpdateCmd('moon:moon', $phase);
+        $this->checkAndUpdateCmd('moon:phase', $phase);
         $this->checkAndUpdateCmd('moon:age', $age);
         $this->checkAndUpdateCmd('moon:illumination', $illumination);
         $this->checkAndUpdateCmd('moon:distance', $distance);
@@ -343,6 +271,10 @@ class dayinfo extends eqLogic {
         //build calendar ID
         if ($country == 'france') {
             $departement = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:department')->execCmd();
+            if (strpos($department,'97') == true) {
+                log::add('dayinfo', 'error', 'Calendrier des DOM TOM non pris en charge');
+                return;
+            }
             $devAddr = dirname(__FILE__) . '/../../resources/academies.csv';
             $devResult = fopen($devAddr, "r");
             while ( ($data = fgetcsv($devResult,1000,",") ) !== FALSE ) {
