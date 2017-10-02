@@ -59,10 +59,12 @@ class dayinfo extends eqLogic {
     }
 
     public function postAjax() {
-        $this->loadCmdFromConf($this->getConfiguration('type'));
+        $this->loadCmdFromConf();
+        $this->getInformations();
     }
 
-    public function loadCmdFromConf($type) {
+    public function loadCmdFromConf() {
+        $type = $this->getConfiguration('type');
         if (!is_file(dirname(__FILE__) . '/../config/devices/' . $type . '.json')) {
             return;
         }
