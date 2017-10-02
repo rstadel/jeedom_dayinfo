@@ -330,12 +330,12 @@ class dayinfo extends eqLogic {
 
     // Vacances scolaires
     public function whatHolidays() {
-        $country = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:country')->execCmd();
+        $country = strtolower(geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:country')->execCmd());
         $holiday = '0';
         $nholiday = '-';
         $nextlabel = '-';
         //build calendar ID
-        if ($country == 'France') {
+        if ($country == 'france') {
             $departement = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:department')->execCmd();
             $devAddr = dirname(__FILE__) . '/../../resources/academies.csv';
             $devResult = fopen($devAddr, "r");
