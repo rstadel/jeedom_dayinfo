@@ -27,47 +27,47 @@ $eqLogics = eqLogic::byType('dayinfo');
     <legend>{{Mes dayinfo}}
     </legend>
     <div class="eqLogicThumbnailContainer">
-        <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
-            <center>
-                <i class="fa fa-plus-circle" style="font-size : 7em;color:#00979c;"></i>
-            </center>
-            <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>Ajouter</center></span>
-        </div>
-        <?php
-        $dir = dirname(__FILE__) . '/../../doc/images/';
-        $files = scandir($dir);
-        foreach ($eqLogics as $eqLogic) {
-            $opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
-            echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
-            echo "<center>";
-            $test = $eqLogic->getConfiguration('type') . '.png';
-            if (in_array($test, $files)) {
-                $path = $eqLogic->getConfiguration('type');
-            } else {
-                $path = 'dayinfo_icon';
-            }
-            echo '<img src="plugins/dayinfo/doc/images/' . $path . '.png" height="105" width="95" />';
-            echo "</center>";
-            echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
-            echo '</div>';
+      <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
+        <center>
+          <i class="fa fa-plus-circle" style="font-size : 7em;color:#00979c;"></i>
+        </center>
+        <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>Ajouter</center></span>
+      </div>
+      <?php
+      $dir = dirname(__FILE__) . '/../../doc/images/';
+      $files = scandir($dir);
+      foreach ($eqLogics as $eqLogic) {
+        $opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
+        echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
+        echo "<center>";
+        $test = $eqLogic->getConfiguration('type') . '.png';
+        if (in_array($test, $files)) {
+          $path = $eqLogic->getConfiguration('type');
+        } else {
+          $path = 'dayinfo_icon';
         }
-        ?>
+        echo '<img src="plugins/dayinfo/doc/images/' . $path . '.png" height="105" width="95" />';
+        echo "</center>";
+        echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
+        echo '</div>';
+      }
+      ?>
     </div>
   </div>
 
 
-<div class="col-lg-10 col-md-9 col-sm-8 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
- <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
- <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
- <a class="btn btn-default eqLogicAction pull-right" data-action="configure"><i class="fa fa-cogs"></i> {{Configuration avancée}}</a>
- <ul class="nav nav-tabs" role="tablist">
-  <li role="presentation"><a href="#" class="eqLogicAction" aria-controls="home" role="tab" data-toggle="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
-  <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> {{Equipement}}</a></li>
-  <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
-</ul>
-<div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
-  <div role="tabpanel" class="tab-pane active" id="eqlogictab">
-    <br/>
+  <div class="col-lg-10 col-md-9 col-sm-8 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
+    <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
+    <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
+    <a class="btn btn-default eqLogicAction pull-right" data-action="configure"><i class="fa fa-cogs"></i> {{Configuration avancée}}</a>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation"><a href="#" class="eqLogicAction" aria-controls="home" role="tab" data-toggle="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
+      <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> {{Equipement}}</a></li>
+      <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
+    </ul>
+    <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+      <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+        <br/>
         <form class="form-horizontal">
           <fieldset>
             <div class="form-group">
@@ -112,42 +112,43 @@ $eqLogics = eqLogic::byType('dayinfo');
             </div>
 
             <div class="form-group">
-                <label class="col-sm-3 control-label">{{Type d'informations}}</label>
-                <div class="col-sm-3">
-                    <select id="typeEq" class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
-                        <option value="bankdays">Jours fériés</option>
-                        <option value="calendar">Calendrier iCal</option>
-                        <option value="holidays">Vacances scolaires</option>
-                        <option value="moon">Lune</option>
-                        <option value="various">Divers</option>
-                    </select>
-                </div>
+              <label class="col-sm-3 control-label">{{Type d'informations}}</label>
+              <div class="col-sm-3">
+                <select id="typeEq" class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
+                  <option value="bankdays">Jours fériés</option>
+                  <option value="holidays">Vacances scolaires</option>
+                  <option value="moon">Lune</option>
+                  <option value="various">Divers</option>
+                  <option value="all">Global</option>
+                  <option value="calendar">Calendrier iCal</option>
+                </select>
+              </div>
             </div>
 
             <div id="cmdgeoloc" class="form-group" style="display:none">
-                <label class="col-sm-3 control-label">{{Localisation à utiliser}}</label>
-                <div class="col-sm-3">
-                    <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="geoloc">
-                        <?php
-                        if (class_exists('geotravCmd')) {
-                            foreach (eqLogic::byType('geotrav') as $geoloc) {
-                                if ($geoloc->getConfiguration('type') == 'location') {
-                                    echo '<option value="' . $geoloc->getId() . '">' . $geoloc->getName() . '</option>';
-                                }
-                            }
-                        } else {
-                            echo '<option value="">Pas de localisation disponible</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
+              <label class="col-sm-3 control-label">{{Localisation à utiliser}}</label>
+              <div class="col-sm-3">
+                <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="geoloc">
+                  <?php
+                  if (class_exists('geotravCmd')) {
+                    foreach (eqLogic::byType('geotrav') as $geoloc) {
+                      if ($geoloc->getConfiguration('type') == 'location') {
+                        echo '<option value="' . $geoloc->getId() . '">' . $geoloc->getName() . '</option>';
+                      }
+                    }
+                  } else {
+                    echo '<option value="">Pas de localisation disponible</option>';
+                  }
+                  ?>
+                </select>
+              </div>
             </div>
 
             <div id="calendar" class="form-group" style="display:none">
-                <label class="col-sm-3 control-label">{{Calendrier ICS}}</label>
-                <div class="col-sm-3">
-                    <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="calendar" placeholder="{{Emplacement du calendrier}}"/>
-                </div>
+              <label class="col-sm-3 control-label">{{Calendrier ICS}}</label>
+              <div class="col-sm-3">
+                <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="calendar" placeholder="{{Emplacement du calendrier}}"/>
+              </div>
             </div>
 
           </fieldset>
