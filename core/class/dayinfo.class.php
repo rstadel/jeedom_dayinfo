@@ -328,10 +328,10 @@ class dayinfo extends eqLogic {
         log::add('dayinfo', 'debug', 'Phase Lune ' . $phase);
         log::add('dayinfo', 'debug', 'Age Lune ' . $age);
         $this->checkAndUpdateCmd('moon:moon', $phase);
-        $this->checkAndUpdateCmd('moon:amoon', $age);
-        $this->checkAndUpdateCmd('moon:illumination', $age);
-        $this->checkAndUpdateCmd('moon:distance', $age);
-        $this->checkAndUpdateCmd('moon:name', $age);
+        $this->checkAndUpdateCmd('moon:age', $age);
+        $this->checkAndUpdateCmd('moon:illumination', $illumination);
+        $this->checkAndUpdateCmd('moon:distance', $distance);
+        $this->checkAndUpdateCmd('moon:name', $name);
     }
 
     // Vacances scolaires
