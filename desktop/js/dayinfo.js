@@ -14,6 +14,14 @@
 * You should have received a copy of the GNU General Public License
 * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
 */
+$('#typeLoc').change(function(){
+  var text = $("#typeLoc").val();
+  if (text == 'holidays' || text == 'bankdays') {
+    $('#cmdgeoloc').show();
+} else {
+    $('#cmdgeoloc').hide();
+  }
+});
 
 $("#table_cmd").delegate(".listEquipementInfo", 'click', function() {
     var el = $(this);

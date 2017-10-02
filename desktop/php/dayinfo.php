@@ -98,7 +98,7 @@ $eqLogics = eqLogic::byType('dayinfo');
               </div>
             </div>
 
-            <div class="form-group">
+            <div id="cmdgeoloc" class="form-group">
                 <label class="col-sm-3 control-label">{{Localisation à utiliser}}</label>
                 <div class="col-sm-3">
                     <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="geoloc">
@@ -120,7 +120,7 @@ $eqLogics = eqLogic::byType('dayinfo');
             <div class="form-group">
                 <label class="col-sm-3 control-label">{{Type d'informations}}</label>
                 <div class="col-sm-3">
-                    <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
+                    <select id="typeEq" class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
                         <option value="bankdays">Jours fériés</option>
                         <option value="calendar">Calendrier iCal</option>
                         <option value="holidays">Vacances scolaires</option>
