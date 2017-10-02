@@ -68,30 +68,28 @@ class dayinfo extends eqLogic {
   }
 
   public function postAjax() {
-    if ($this->getConfiguration('type','all') == 'all') {
-      $this->loadCmdFromConf('bankdays');
-      $this->loadCmdFromConf('holidays');
-      $this->loadCmdFromConf('moon');
-      $this->loadCmdFromConf('various');
-    } else {
-      $this->loadCmdFromConf($this->getConfiguration('type'));
-    }
+    $this->loadCmdFromConf($this->getConfiguration('type'));
     $this->getInformations();
   }
 
   public function loadCmdFromConf($type) {
-    if (!is_file(dirname(__FILE__) . '/../config/devices/' . $type . '.json')) {
-      return;
+    if ($type == 'all') {
+      $content = file_get_contents(dirname(__FILE__) . '/../config/devices/bankdays.json');
+      $return = json_decode($content, true);
+      $content = file_get_contents(dirname(__FILE__) . '/../config/devices/holidays.json');
+      $return += json_decode($content, true);
+      $content = file_get_contents(dirname(__FILE__) . '/../config/devices/moon.json');
+      $return += json_decode($content, true);
+      $content = file_get_contents(dirname(__FILE__) . '/../config/devices/various.json');
+      $return += json_decode($content, true);
+    } else {
+      $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
+      $return += json_decode($content, true);
     }
-    $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
-    if (!is_json($content)) {
-      return;
-    }
-    $device = json_decode($content, true);
-    if (!is_array($device) || !isset($device['commands'])) {
+    if (!is_array($return) || !isset($return['commands'])) {
       return true;
     }
-    $this->import($device);
+    $this->import($return);
   }
 
   public function isNotWorkable(){
