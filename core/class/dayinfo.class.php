@@ -339,13 +339,14 @@ class dayinfo extends eqLogic {
             $departement = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:department')->execCmd();
             $devAddr = dirname(__FILE__) . '/../../resources/academies.csv';
             $devResult = fopen($devAddr, "r");
-            while ( ($data = fgetcsv($devResult,1000,";") ) !== FALSE ) {
-              $num = count($data);
-              if ($data[3] == $departement) {
-                  $explode = explode(' ',$data[2]);
-                  $calendarid = $country . $explode[1];
-              }
-          }
+            while ( ($data = fgetcsv($devResult,1000,",") ) !== FALSE ) {
+                $num = count($data);
+                if ($data[3] == $departement) {
+                    $explode = explode(' ',$data[2]);
+                    $calendarid = $country . $explode[1];
+                }
+            }
+            fclose($handle);
         } else {
             $calendarid = $country;
         }
