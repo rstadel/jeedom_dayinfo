@@ -87,7 +87,7 @@ class dayinfo extends eqLogic {
         $year = date("Y", $timestamp);
         $holidays = dayinfo::getHolidays($country,$region,$year);
         $return = (in_array($timestamp, $holidays)) ? 1 : 0;
-        $this->checkAndUpdateCmd('bankdays:redday', $return);
+        $this->checkAndUpdateCmd('bankdays:bankday', $return);
         log::add('dayinfo', 'debug', 'Redday ' . $return);
     }
 
@@ -181,13 +181,6 @@ class dayinfo extends eqLogic {
                 $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay - 2,  $easterYear); // Vendredi Saint
                 $holidays[] = $easterDate;
                 $holidays[] = mktime(0, 0, 0, $easterMonth, $easterDay + 1,  $easterYear); // Lundi de Paques
-
-                if ($region == "QC") {
-                    if (date("N", mktime(0, 0, 0, 7, 1, $year)) == 7) { // Si 1/7 dimanche
-                        $holidays[] = mktime(0, 0, 0, 7, 2,  $year);
-                    }
-                    $holidays[] = mktime(0, 0, 0, 6, 24,  $year); // Fete nationale (Quebec)
-                }
         }
         sort($holidays);
         return $holidays;
@@ -222,7 +215,7 @@ class dayinfo extends eqLogic {
         $date_next_holiday = new DateTime(date('Y-m-d', $next_holiday));
         $current_date = new DateTime('today');
         $interval = $current_date->diff($date_next_holiday);
-        $this->checkAndUpdateCmd('bankdays:nredday', $interval->format($format));
+        $this->checkAndUpdateCmd('bankdays:nextdays', $interval->format($format));
         log::add('dayinfo', 'debug', 'Nredday ' . $interval->format($format));
     }
 

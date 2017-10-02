@@ -19,23 +19,6 @@
             "logicalId": "bankdays:nextdays"
         },
         {
-            "name": "Prochain jour férié (label)",
-            "type": "info",
-            "subtype": "string",
-            "display": {
-				"generic_type": "DONT"
-            },
-            "template": {
-					"dashboard": "line",
-					"mobile": "line"
-            },
-            "isVisible": 1,
-            "configuration": {
-				"type": "bankdays"
-            },
-            "logicalId": "bankdays:nextlabel"
-        },
-        {
             "name": "Jour férié",
             "type": "info",
             "subtype": "binary",
@@ -51,23 +34,6 @@
             },
             "isVisible": 1,
             "logicalId": "bankdays:bankday"
-        },
-        {
-            "name": "Jour férié (label)",
-            "type": "info",
-            "subtype": "string",
-            "display": {
-				"generic_type": "DONT"
-            },
-            "template": {
-					"dashboard": "line",
-					"mobile": "line"
-            },
-            "isVisible": 1,
-            "configuration": {
-				"type": "bankdays"
-            },
-            "logicalId": "bankdays:daylabel"
         }
    ]
 }
