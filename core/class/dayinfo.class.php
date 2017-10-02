@@ -44,7 +44,7 @@ class dayinfo extends eqLogic {
             $this->getDifftoNextHoliday();
         }
         if ($this->getConfiguration('type') == 'calendar') {
-
+            $this->calendarEvent();
         }
         if ($this->getConfiguration('type') == 'holidays') {
             $this->whatHolidays();
@@ -366,6 +366,56 @@ class dayinfo extends eqLogic {
         $this->checkAndUpdateCmd('holidays:nextbegin', $diffday);
         $this->checkAndUpdateCmd('holidays:nextend', $diffend);
         $this->checkAndUpdateCmd('holidays:nextlabel', $nextlabel);
+    }
+
+    public function calendarEvent() {
+        $event = '0';
+        $label = '-';
+        $nextlabel = '-';
+
+        $icaddr = $this->getConfiguration('calendar');
+        $ical   = new ICal($icaddr);
+        log::add('dayinfo', 'debug', 'Ical ' . $icaddr);
+
+        $events = $ical->events();
+        //$timestamp = strtotime("12/30/2015");
+        $timestamp = strtotime("today");
+        $datetoday = date_create("today");
+        $diffday = 365;
+        $diffend = 365;
+
+        foreach ($events as $event) {
+            if (isset($event['DTEND'])) {
+                $datehol = date_create($event['DTSTART']);
+                if ($datetoday < $datehol) {
+                    //calcul du début prochaines vacances
+                    $diff = date_diff($datetoday, $datehol);
+                    if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
+                        $diffday = $diff->format('%a');
+                        $nextlabel = $event['SUMMARY'];
+                    }
+                }
+                $datefin = date_create($event['DTEND']);
+                if ($datetoday < $datefin) {
+                    //calcul de la fin des prochaines vacances
+                    $diff = date_diff($datetoday, $datefin);
+                    if ($diff->format('%a') < $diffend && $diff->format('%a') > 0) {
+                        $diffend = $diff->format('%a');
+                    }
+                }
+                if ($datehol <= $datetoday && $datetoday < $datefin)
+                {
+                    $event = '1';
+                    $label = $event['SUMMARY'];
+                }
+            }
+        }
+
+        $this->checkAndUpdateCmd('calendar:event', $holiday);
+        $this->checkAndUpdateCmd('calendar:eventlabel', $nholiday);
+        $this->checkAndUpdateCmd('calendar:nextbegin', $diffday);
+        $this->checkAndUpdateCmd('calendar:nextend', $diffend);
+        $this->checkAndUpdateCmd('calendar:nextlabel', $nextlabel);
     }
 
 }

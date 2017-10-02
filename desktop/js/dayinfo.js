@@ -21,6 +21,11 @@ $('#typeEq').change(function(){
 } else {
     $('#cmdgeoloc').hide();
   }
+  if (text == 'calendar') {
+    $('#calendar').show();
+} else {
+    $('#calendar').hide();
+  }
 });
 
 $("#table_cmd").delegate(".listEquipementInfo", 'click', function() {

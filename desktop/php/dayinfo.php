@@ -143,6 +143,13 @@ $eqLogics = eqLogic::byType('dayinfo');
                 </div>
             </div>
 
+            <div id="calendar" class="form-group" style="display:none">
+                <label class="col-sm-3 control-label">{{Calendrier ICS}}</label>
+                <div class="col-sm-3">
+                    <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="calendar" placeholder="{{Emplacement du calendrier}}"/>
+                </div>
+            </div>
+
           </fieldset>
         </form>
       </div>

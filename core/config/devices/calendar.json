@@ -36,6 +36,23 @@
             "logicalId": "calendar:eventlabel"
         },
         {
+            "name": "Prochain Evenement (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:nextlabel"
+        },
+        {
             "name": "Prochaine fin évènement",
             "type": "info",
             "subtype": "numeric",
