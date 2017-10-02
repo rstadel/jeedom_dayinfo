@@ -302,7 +302,7 @@ class dayinfo extends eqLogic {
     public function isTodayWeekend() {
         $currentDate = new DateTime("now");
         $weekend = ($currentDate->format('N') >= 6) ? 1 : 0;
-        $this->checkAndUpdateCmd('weekend', $weekend);
+        $this->checkAndUpdateCmd('various:weekend', $weekend);
         log::add('dayinfo', 'debug', 'Weekend ' . $weekend);
     }
 
@@ -322,10 +322,16 @@ class dayinfo extends eqLogic {
         $moon = new Solaris\MoonPhase();
         $age = round($moon->age(),1); // age de la lune en jour
         $phase = round($moon->phase(),2); //0 et 1 nouvelle lune, 0,5 pleine lune
-        log::add('dayinfo', 'debug', 'Phase Lune ' . round($phase,2));
+        $illumination = round($moon->illumination(),2);
+        $distance = round($moon->distance(),2);
+        $name = $moon->phase_name();
+        log::add('dayinfo', 'debug', 'Phase Lune ' . $phase);
         log::add('dayinfo', 'debug', 'Age Lune ' . $age);
         $this->checkAndUpdateCmd('moon:moon', $phase);
         $this->checkAndUpdateCmd('moon:amoon', $age);
+        $this->checkAndUpdateCmd('moon:illumination', $age);
+        $this->checkAndUpdateCmd('moon:distance', $age);
+        $this->checkAndUpdateCmd('moon:name', $age);
     }
 
     // Vacances scolaires

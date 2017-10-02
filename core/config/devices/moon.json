@@ -34,6 +34,57 @@
 				"type": "moon"
             },
             "logicalId": "moon:age"
+        },
+        {
+            "name": "Illumination de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:illumination"
+        },
+        {
+            "name": "Distance de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:distance"
+        },
+        {
+            "name": "Phase en cours",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:name"
         }
     ]
 }
