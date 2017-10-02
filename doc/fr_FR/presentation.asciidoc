@@ -39,3 +39,15 @@ Lune
 - distance
 
 - nom de la phase
+
+Calendrier personnalisé
+
+- event en cours (1 ou 0)
+
+- label event (tel que défini dans le calendrier fourni)
+
+- nombre de jours avant le prochain event
+
+- nombre de jours avant la fin du prochain event
+
+- label prochain event
