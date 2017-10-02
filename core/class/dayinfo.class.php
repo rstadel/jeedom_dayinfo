@@ -81,13 +81,13 @@ class dayinfo extends eqLogic {
 
     public function isNotWorkable(){
         //  $departement = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:department')->execCmd();
-        $country = $this->getConfiguration('country');
-        $region = $this->getConfiguration('zone');
+        $country = strtolower(geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:country')->execCmd());
+        $region = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:department')->execCmd();
         $timestamp = strtotime("today");
         $year = date("Y", $timestamp);
         $holidays = dayinfo::getHolidays($country,$region,$year);
         $return = (in_array($timestamp, $holidays)) ? 1 : 0;
-        $this->checkAndUpdateCmd('redday', $return);
+        $this->checkAndUpdateCmd('bankdays:redday', $return);
         log::add('dayinfo', 'debug', 'Redday ' . $return);
     }
 
@@ -294,7 +294,7 @@ class dayinfo extends eqLogic {
         $date_next_holiday = new DateTime(date('Y-m-d', $next_holiday));
         $current_date = new DateTime('today');
         $interval = $current_date->diff($date_next_holiday);
-        $this->checkAndUpdateCmd('nredday', $interval->format($format));
+        $this->checkAndUpdateCmd('bankdays:nredday', $interval->format($format));
         log::add('dayinfo', 'debug', 'Nredday ' . $interval->format($format));
     }
 
@@ -313,8 +313,8 @@ class dayinfo extends eqLogic {
         $nseason = $season->getNextSeasonNbDays();
         log::add('dayinfo', 'debug', 'Season ' . $aseason);
         log::add('dayinfo', 'debug', 'Next Season ' . $nseason);
-        $this->checkAndUpdateCmd('season', $aseason);
-        $this->checkAndUpdateCmd('nseason', $nseason);
+        $this->checkAndUpdateCmd('various:season', $aseason);
+        $this->checkAndUpdateCmd('various:nseason', $nseason);
     }
 
     // Moon
@@ -324,8 +324,8 @@ class dayinfo extends eqLogic {
         $phase = round($moon->phase(),2); //0 et 1 nouvelle lune, 0,5 pleine lune
         log::add('dayinfo', 'debug', 'Phase Lune ' . round($phase,2));
         log::add('dayinfo', 'debug', 'Age Lune ' . $age);
-        $this->checkAndUpdateCmd('moon', $phase);
-        $this->checkAndUpdateCmd('amoon', $age);
+        $this->checkAndUpdateCmd('moon:moon', $phase);
+        $this->checkAndUpdateCmd('moon:amoon', $age);
     }
 
     // Vacances scolaires
