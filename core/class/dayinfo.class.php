@@ -346,7 +346,7 @@ class dayinfo extends eqLogic {
                     $calendarid = $country . $explode[1];
                 }
             }
-            fclose($handle);
+            fclose($devResult);
         } else {
             $calendarid = $country;
         }
