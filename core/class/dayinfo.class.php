@@ -318,27 +318,32 @@ class dayinfo extends eqLogic {
     // Moon
     public function whatMoon() {
         $moon = new Solaris\MoonPhase();
-        $age = round( $moon->age(), 1 ); // age de la lune en jour
-        $phase = $moon->phase(); //0 et 1 nouvelle lune, 0,5 pleine lune
+        $age = round($moon->age(),1); // age de la lune en jour
+        $phase = round($moon->phase(),2); //0 et 1 nouvelle lune, 0,5 pleine lune
         log::add('dayinfo', 'debug', 'Phase Lune ' . round($phase,2));
         log::add('dayinfo', 'debug', 'Age Lune ' . $age);
-        $this->checkAndUpdateCmd('moon', round($phase,2));
+        $this->checkAndUpdateCmd('moon', $phase);
         $this->checkAndUpdateCmd('amoon', $age);
     }
 
-    // Moon
+    // Vacances scolaires
     public function whatHolidays() {
-        $country = $this->getConfiguration('country');
-        $region = $this->getConfiguration('zone');
+        $country = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:country')->execCmd();
         $holiday = '0';
         $nholiday = '-';
+        $nextlabel = '-';
         //build calendar ID
-        if ($country == 'france') {
-            if ($region == 'A' | $region == 'B' | $region == 'C') {
-                $calendarid = $country . $region;
-            } else {
-                $calendarid = $country . 'B';
-            }
+        if ($country == 'France') {
+            $departement = geotravCmd::byEqLogicIdAndLogicalId($this->getConfiguration('geoloc'),'location:department')->execCmd();
+            $devAddr = dirname(__FILE__) . '/../../resources/academies.csv';
+            $devResult = fopen($devAddr, "r");
+            while ( ($data = fgetcsv($devResult,1000,";") ) !== FALSE ) {
+              $num = count($data);
+              if ($data[3] == $departement) {
+                  $explode = explode(' ',$data[2]);
+                  $calendarid = $country . $explode[1];
+              }
+          }
         } else {
             $calendarid = $country;
         }
@@ -361,6 +366,7 @@ class dayinfo extends eqLogic {
                     $diff = date_diff($datetoday, $datehol);
                     if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
                         $diffday = $diff->format('%a');
+                        $nextlabel = $event['SUMMARY'];
                     }
                 }
                 $datefin = date_create($event['DTEND']);
@@ -401,6 +407,7 @@ class dayinfo extends eqLogic {
             $diff = date_diff($datetoday, $debutete);
             if ($diff->format('%a') < $diffday && $diff->format('%a') > 0) {
                 $diffday = $diff->format('%a');
+                $nextlabel = "Vacances d'été";
             }
         }
 
@@ -420,10 +427,11 @@ class dayinfo extends eqLogic {
         log::add('dayinfo', 'debug', 'Label ' . $nholiday);
         log::add('dayinfo', 'debug', 'Next Holiday ' . $diffday);
         log::add('dayinfo', 'debug', 'Next End Holiday ' . $diffend);
-        $this->checkAndUpdateCmd('holiday', $holiday);
-        $this->checkAndUpdateCmd('nholiday', $nholiday);
-        $this->checkAndUpdateCmd('nextholiday', $diffday);
-        $this->checkAndUpdateCmd('nextendholiday', $diffend);
+        $this->checkAndUpdateCmd('holidays:day', $holiday);
+        $this->checkAndUpdateCmd('holidays:daylabel', $nholiday);
+        $this->checkAndUpdateCmd('holidays:nextbegin', $diffday);
+        $this->checkAndUpdateCmd('holidays:nextend', $diffend);
+        $this->checkAndUpdateCmd('holidays:nextlabel', $nextlabel);
     }
 
 }

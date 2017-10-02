@@ -26,6 +26,18 @@
             "logicalId": "holidays:daylabel"
         },
         {
+            "name": "Prochaines vacances (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "holidays"
+            },
+            "logicalId": "holidays:nextlabel"
+        },
+        {
             "name": "Prochaine fin de vacances",
             "type": "info",
             "subtype": "numeric",

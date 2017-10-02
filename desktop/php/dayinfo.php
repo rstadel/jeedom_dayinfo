@@ -61,7 +61,7 @@ $eqLogics = eqLogic::byType('dayinfo');
         <form class="form-horizontal">
           <fieldset>
             <div class="form-group">
-              <label class="col-sm-3 control-label">{{Lieu dayinfo}}</label>
+              <label class="col-sm-3 control-label">{{Nom des infos du jour}}</label>
               <div class="col-sm-3">
                 <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
                 <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement dayinfo}}"/>
@@ -82,7 +82,7 @@ $eqLogics = eqLogic::byType('dayinfo');
             </div>
             <div class="form-group">
               <label class="col-sm-3 control-label">{{Catégorie}}</label>
-              <div class="col-sm-8">
+              <div class="col-sm-3">
                 <?php
                 foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
                   echo '<label class="checkbox-inline">';
@@ -95,16 +95,9 @@ $eqLogics = eqLogic::byType('dayinfo');
             </div>
             <div class="form-group">
               <label class="col-sm-3 control-label" ></label>
-              <div class="col-sm-8">
+              <div class="col-sm-3">
                 <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
                 <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-sm-3 control-label">{{Commentaire}}</label>
-              <div class="col-sm-3">
-                <textarea class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="commentaire" ></textarea>
               </div>
             </div>
 
