@@ -2,8 +2,4 @@
 
 Le plugin ne comporte pas de configuration générale.
 
-Sur l'équipement il faut configurer le pays et la zone.
-
-Le pays sert à calculer les jours fériés et les zones.
-
-La zone sert à calculer les vacances scolaires.
+Sur l'équipement il faut configurer le type et la localisation si elle est nécessaire

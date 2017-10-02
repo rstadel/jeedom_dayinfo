@@ -46,7 +46,7 @@ $eqLogics = eqLogic::byType('dayinfo');
             } else {
                 $path = 'dayinfo_icon';
             }
-            echo '<img src="plugins/stock/doc/images/' . $path . '.png" height="105" width="95" />';
+            echo '<img src="plugins/dayinfo/doc/images/' . $path . '.png" height="105" width="95" />';
             echo "</center>";
             echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
             echo '</div>';
