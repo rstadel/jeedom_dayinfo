@@ -101,10 +101,10 @@ $eqLogics = eqLogic::byType('dayinfo');
               </div>
             </div>
 
-            <div id="geolocEq" class="form-group" style="display:none">
+            <div class="form-group">
                 <label class="col-sm-3 control-label">{{Localisation à utiliser}}</label>
                 <div class="col-sm-3">
-                    <select class="form-control eqLogicAttr configuration" id="geoloc" data-l1key="configuration" data-l2key="geoloc">
+                    <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="geoloc">
                         <?php
                         if (class_exists('geotravCmd')) {
                             foreach (eqLogic::byType('geotrav') as $geoloc) {
@@ -120,10 +120,10 @@ $eqLogics = eqLogic::byType('dayinfo');
                 </div>
             </div>
 
-            <div id="geolocEq" class="form-group" style="display:none">
+            <div class="form-group">
                 <label class="col-sm-3 control-label">{{Type d'informations}}</label>
                 <div class="col-sm-3">
-                    <select class="form-control eqLogicAttr configuration" id="geoloc" data-l1key="configuration" data-l2key="type">
+                    <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
                         <option value="bankdays">Jours fériés</option>
                         <option value="calendar">Calendrier iCal</option>
                         <option value="holidays">Vacances scolaires</option>
