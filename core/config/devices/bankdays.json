@@ -8,6 +8,11 @@
             "display": {
 				"generic_type": "DONT"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
             "configuration": {
 				"type": "bankdays"
             },
@@ -20,6 +25,11 @@
             "display": {
 				"generic_type": "DONT"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
             "configuration": {
 				"type": "bankdays"
             },
@@ -35,6 +45,11 @@
             "configuration": {
 				"type": "bankdays"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
             "logicalId": "bankdays:bankday"
         },
         {
@@ -44,6 +59,11 @@
             "display": {
 				"generic_type": "DONT"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
             "configuration": {
 				"type": "bankdays"
             },

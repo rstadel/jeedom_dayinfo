@@ -8,6 +8,11 @@
             "display": {
 				"generic_type": "DONT"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
             "configuration": {
 				"type": "calendar"
             },
@@ -20,6 +25,11 @@
             "display": {
 				"generic_type": "DONT"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
             "configuration": {
 				"type": "calendar"
             },
@@ -32,6 +42,11 @@
             "display": {
 				"generic_type": "DONT"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
             "configuration": {
 				"type": "calendar"
             },
@@ -44,6 +59,11 @@
             "display": {
 				"generic_type": "DONT"
             },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
             "configuration": {
 				"type": "calendar"
             },
