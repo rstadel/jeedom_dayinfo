@@ -33,12 +33,25 @@ $eqLogics = eqLogic::byType('dayinfo');
             </center>
             <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>Ajouter</center></span>
         </div>
-        <div class="cursor eqLogicAction" data-action="gotoPluginConf" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
-      <center>
-        <i class="fa fa-wrench" style="font-size : 6em;color:#767676;"></i>
-      </center>
-      <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Configuration}}</center></span>
-    </div>
+        <?php
+        $dir = dirname(__FILE__) . '/../../doc/images/';
+        $files = scandir($dir);
+        foreach ($eqLogics as $eqLogic) {
+            $opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
+            echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
+            echo "<center>";
+            $test = $eqLogic->getConfiguration('type') . '.png';
+            if (in_array($test, $files)) {
+                $path = $eqLogic->getConfiguration('type');
+            } else {
+                $path = 'dayinfo_icon';
+            }
+            echo '<img src="plugins/stock/doc/images/' . $path . '.png" height="105" width="95" />';
+            echo "</center>";
+            echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
+            echo '</div>';
+        }
+        ?>
     </div>
   </div>
 
@@ -98,7 +111,20 @@ $eqLogics = eqLogic::byType('dayinfo');
               </div>
             </div>
 
-            <div id="cmdgeoloc" class="form-group">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">{{Type d'informations}}</label>
+                <div class="col-sm-3">
+                    <select id="typeEq" class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
+                        <option value="bankdays">Jours fériés</option>
+                        <option value="calendar">Calendrier iCal</option>
+                        <option value="holidays">Vacances scolaires</option>
+                        <option value="moon">Lune</option>
+                        <option value="various">Divers</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="cmdgeoloc" class="form-group" style="display:none">
                 <label class="col-sm-3 control-label">{{Localisation à utiliser}}</label>
                 <div class="col-sm-3">
                     <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="geoloc">
@@ -113,19 +139,6 @@ $eqLogics = eqLogic::byType('dayinfo');
                             echo '<option value="">Pas de localisation disponible</option>';
                         }
                         ?>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-3 control-label">{{Type d'informations}}</label>
-                <div class="col-sm-3">
-                    <select id="typeEq" class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
-                        <option value="bankdays">Jours fériés</option>
-                        <option value="calendar">Calendrier iCal</option>
-                        <option value="holidays">Vacances scolaires</option>
-                        <option value="moon">Lune</option>
-                        <option value="various">Divers</option>
                     </select>
                 </div>
             </div>
