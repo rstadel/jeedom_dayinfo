@@ -75,13 +75,14 @@ class dayinfo extends eqLogic {
     public function loadCmdFromConf($type) {
         if ($type == 'all') {
             $content = file_get_contents(dirname(__FILE__) . '/../config/devices/bankdays.json');
-            $return = json_decode($content, true);
+            $bankdays = json_decode($content, true);
             $content = file_get_contents(dirname(__FILE__) . '/../config/devices/holidays.json');
-            $return = array_merge($return,json_decode($content, true));
-            $content = file_get_contents(dirname(__FILE__) . '/../config/devices/moon.json');
-            $return = array_merge($return,json_decode($content, true));
-            $content = file_get_contents(dirname(__FILE__) . '/../config/devices/various.json');
-            $return = array_merge($return,json_decode($content, true));
+            $holidays = json_decode($content, true);
+            $moon = file_get_contents(dirname(__FILE__) . '/../config/devices/moon.json');
+            $bankdays = json_decode($content, true);
+            $various = file_get_contents(dirname(__FILE__) . '/../config/devices/various.json');
+            $bankdays = json_decode($content, true);
+            $return = array_merge($bankdays,$holidays,$moon,$various);
         } else {
             $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
             $return += json_decode($content, true);
