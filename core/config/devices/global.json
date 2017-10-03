@@ -2,7 +2,7 @@
     "name": "global",
     "commands": [
         {
-            "name": "Evenement (statut)",
+            "name": "Vacances (statut)",
             "type": "info",
             "subtype": "binary",
             "display": {
@@ -16,10 +16,10 @@
             "configuration": {
 				"type": "holidays"
             },
-            "logicalId": "holidays:event"
+            "logicalId": "holidays:day"
         },
         {
-            "name": "Evenement (label)",
+            "name": "Vacances (label)",
             "type": "info",
             "subtype": "string",
             "display": {
@@ -33,10 +33,10 @@
             "configuration": {
 				"type": "holidays"
             },
-            "logicalId": "holidays:eventlabel"
+            "logicalId": "holidays:daylabel"
         },
         {
-            "name": "Prochain Evenement (label)",
+            "name": "Prochaines vacances (label)",
             "type": "info",
             "subtype": "string",
             "display": {
@@ -53,7 +53,7 @@
             "logicalId": "holidays:nextlabel"
         },
         {
-            "name": "Prochaine fin évènement",
+            "name": "Prochaine fin de vacances",
             "type": "info",
             "subtype": "numeric",
             "display": {
@@ -70,7 +70,7 @@
             "logicalId": "holidays:nextend"
         },
         {
-            "name": "Prochain début évènement",
+            "name": "Prochain début de vacances",
             "type": "info",
             "subtype": "numeric",
             "display": {
