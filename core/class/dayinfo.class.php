@@ -85,7 +85,7 @@ class dayinfo extends eqLogic {
             $return = array_merge($bankdays,$holidays,$moon,$various);
         } else {
             $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
-            $return += json_decode($content, true);
+            $return = json_decode($content, true);
         }
         if (!is_array($return) || !isset($return['commands'])) {
             return true;
