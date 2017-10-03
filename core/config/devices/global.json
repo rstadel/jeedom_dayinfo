@@ -14,9 +14,9 @@
             },
             "isVisible": 0,
             "configuration": {
-				"type": "calendar"
+				"type": "holidays"
             },
-            "logicalId": "calendar:event"
+            "logicalId": "holidays:event"
         },
         {
             "name": "Evenement (label)",
@@ -31,9 +31,9 @@
             },
             "isVisible": 1,
             "configuration": {
-				"type": "calendar"
+				"type": "holidays"
             },
-            "logicalId": "calendar:eventlabel"
+            "logicalId": "holidays:eventlabel"
         },
         {
             "name": "Prochain Evenement (label)",
@@ -48,9 +48,9 @@
             },
             "isVisible": 1,
             "configuration": {
-				"type": "calendar"
+				"type": "holidays"
             },
-            "logicalId": "calendar:nextlabel"
+            "logicalId": "holidays:nextlabel"
         },
         {
             "name": "Prochaine fin évènement",
@@ -65,9 +65,9 @@
             },
             "isVisible": 0,
             "configuration": {
-				"type": "calendar"
+				"type": "holidays"
             },
-            "logicalId": "calendar:nextend"
+            "logicalId": "holidays:nextend"
         },
         {
             "name": "Prochain début évènement",
@@ -82,9 +82,9 @@
             },
             "isVisible": 0,
             "configuration": {
-				"type": "calendar"
+				"type": "holidays"
             },
-            "logicalId": "calendar:nextbegin"
+            "logicalId": "holidays:nextbegin"
         },
         {
             "name": "Prochain jour férié (jours)",
