@@ -371,7 +371,7 @@ class dayinfo extends eqLogic {
     }
 
     public function calendarEvent() {
-        $event = '0';
+        $eventn = '0';
         $label = '-';
         $nextlabel = '-';
 
@@ -407,13 +407,13 @@ class dayinfo extends eqLogic {
                 }
                 if ($datehol <= $datetoday && $datetoday < $datefin)
                 {
-                    $event = '1';
+                    $eventn = '1';
                     $label = $event['SUMMARY'];
                 }
             }
         }
 
-        $this->checkAndUpdateCmd('calendar:event', $event);
+        $this->checkAndUpdateCmd('calendar:event', $eventn);
         $this->checkAndUpdateCmd('calendar:eventlabel', $label);
         $this->checkAndUpdateCmd('calendar:nextbegin', $diffday);
         $this->checkAndUpdateCmd('calendar:nextend', $diffend);
