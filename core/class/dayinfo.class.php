@@ -413,8 +413,8 @@ class dayinfo extends eqLogic {
             }
         }
 
-        $this->checkAndUpdateCmd('calendar:event', $holiday);
-        $this->checkAndUpdateCmd('calendar:eventlabel', $nholiday);
+        $this->checkAndUpdateCmd('calendar:event', $event);
+        $this->checkAndUpdateCmd('calendar:eventlabel', $label);
         $this->checkAndUpdateCmd('calendar:nextbegin', $diffday);
         $this->checkAndUpdateCmd('calendar:nextend', $diffend);
         $this->checkAndUpdateCmd('calendar:nextlabel', $nextlabel);
