@@ -16,7 +16,7 @@
 */
 $('#typeEq').change(function(){
   var text = $("#typeEq").val();
-  if (text == 'holidays' || text == 'bankdays' || text == 'all') {
+  if (text == 'holidays' || text == 'bankdays' || text == 'global') {
     $('#cmdgeoloc').show();
 } else {
     $('#cmdgeoloc').hide();
