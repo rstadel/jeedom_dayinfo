@@ -1,24 +1,3 @@
-==== 29/12/2015
+==== Version octobre 2017
 
-Ferien Korrektur
-
-==== Version 1.3
-
-Hinzugefügt, nächstes Ferien Ende 
-
-Formatierung der aktuellen Standards
-
-==== Version 1.2
-
-Korrektur früherer Ferien
-
-==== Version 1.1
-
-Hinzufügen von Indikatoren auf dem Mond
-
- Ferientage für Frankreich, Belgien, der Schweiz, Kanada hinzugefügt
-
-
-==== Version 1
-
-Erstellung des Plugins
+Refonte complète avec passage sur différents types d'équipements
