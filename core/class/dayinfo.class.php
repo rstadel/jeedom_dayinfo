@@ -80,8 +80,8 @@ class dayinfo extends eqLogic {
             $holidays = json_decode($content, true);
             $moon = file_get_contents(dirname(__FILE__) . '/../config/devices/moon.json');
             $bankdays = json_decode($content, true);
-            $various = file_get_contents(dirname(__FILE__) . '/../config/devices/various.json');
-            $bankdays = json_decode($content, true);
+            $content = file_get_contents(dirname(__FILE__) . '/../config/devices/various.json');
+            $various = json_decode($content, true);
             $return = array_merge($bankdays,$holidays,$moon,$various);
         } else {
             $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
