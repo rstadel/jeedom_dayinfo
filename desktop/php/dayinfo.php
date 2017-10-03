@@ -119,7 +119,7 @@ $eqLogics = eqLogic::byType('dayinfo');
                   <option value="holidays">Vacances scolaires</option>
                   <option value="moon">Lune</option>
                   <option value="various">Divers</option>
-                  <option value="all">Global</option>
+                  <option value="global">Global</option>
                   <option value="calendar">Calendrier iCal</option>
                 </select>
               </div>

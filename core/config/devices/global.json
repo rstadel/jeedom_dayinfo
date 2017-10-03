@@ -1,0 +1,260 @@
+{
+    "name": "global",
+    "commands": [
+        {
+            "name": "Evenement (statut)",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:event"
+        },
+        {
+            "name": "Evenement (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:eventlabel"
+        },
+        {
+            "name": "Prochain Evenement (label)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:nextlabel"
+        },
+        {
+            "name": "Prochaine fin évènement",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:nextend"
+        },
+        {
+            "name": "Prochain début évènement",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
+            "configuration": {
+				"type": "calendar"
+            },
+            "logicalId": "calendar:nextbegin"
+        },
+        {
+            "name": "Prochain jour férié (jours)",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "bankdays"
+            },
+            "logicalId": "bankdays:nextdays"
+        },
+        {
+            "name": "Jour férié",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "configuration": {
+				"type": "bankdays"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "logicalId": "bankdays:bankday"
+        },
+        {
+            "name": "Phase de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:phase"
+        },
+        {
+            "name": "Age de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:age"
+        },
+        {
+            "name": "Illumination de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:illumination"
+        },
+        {
+            "name": "Distance de la lune",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 0,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:distance"
+        },
+        {
+            "name": "Phase en cours",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "moon"
+            },
+            "logicalId": "moon:name"
+        },
+        {
+            "name": "Saison",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "various"
+            },
+            "logicalId": "various:season"
+        },
+        {
+            "name": "Prochaine Saison",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "various"
+            },
+            "logicalId": "various:nextseason"
+        },
+        {
+            "name": "Weekend",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+					"dashboard": "line",
+					"mobile": "line"
+            },
+            "isVisible": 1,
+            "configuration": {
+				"type": "various"
+            },
+            "logicalId": "various:weekend"
+        }
+    ]
+}
