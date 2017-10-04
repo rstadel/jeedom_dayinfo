@@ -12,7 +12,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "holidays"
             },
@@ -29,7 +28,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "holidays"
             },
@@ -46,7 +44,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "holidays"
             },
@@ -63,7 +60,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "holidays"
             },
@@ -80,7 +76,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "holidays"
             },
@@ -97,7 +92,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "bankdays"
             },
@@ -117,7 +111,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "logicalId": "bankdays:bankday"
         },
         {
@@ -131,7 +124,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "moon"
             },
@@ -148,7 +140,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "moon"
             },
@@ -165,7 +156,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "moon"
             },
@@ -182,7 +172,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "moon"
             },
@@ -199,7 +188,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "moon"
             },
@@ -216,7 +204,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "various"
             },
@@ -233,7 +220,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "various"
             },
@@ -250,7 +236,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "various"
             },

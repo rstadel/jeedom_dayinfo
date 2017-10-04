@@ -12,7 +12,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "holidays"
             },
@@ -29,7 +28,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "holidays"
             },
@@ -46,7 +44,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "holidays"
             },
@@ -63,7 +60,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "holidays"
             },
@@ -80,7 +76,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "holidays"
             },

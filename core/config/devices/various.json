@@ -12,7 +12,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "various"
             },
@@ -29,7 +28,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "various"
             },
@@ -46,7 +44,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "various"
             },

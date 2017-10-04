@@ -12,7 +12,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "calendar"
             },
@@ -29,7 +28,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "calendar"
             },
@@ -46,7 +44,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 1,
             "configuration": {
 				"type": "calendar"
             },
@@ -63,7 +60,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "calendar"
             },
@@ -80,7 +76,6 @@
 					"dashboard": "line",
 					"mobile": "line"
             },
-            "isVisible": 0,
             "configuration": {
 				"type": "calendar"
             },
