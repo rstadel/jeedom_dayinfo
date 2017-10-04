@@ -577,6 +577,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="openblock panel">
+<div class="title">Est-ce que je peux récupérer un calendrier depuis une instance Nextcloud ?</div><div class="content">
+<div class="paragraph">
+<p>Pas directement dans le plugin, mais via ce genre de commande oui :</p>
+</div>
+<div class="paragraph">
+<p>wget --output-document ./calendar.ics --auth-no-challenge --http-user=USER --http-password="PASSWORD" "http://IP:PORT/remote.php/dav/calendars/USER/Kalender?export"</p>
+</div>
+</div>
+</div>
 <hr>
 </div>
 </div>
