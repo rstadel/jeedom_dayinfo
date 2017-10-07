@@ -10,7 +10,7 @@ Ce plugin permet d'obtenir plusieurs types d'équipements qui apportent leurs in
 
 * nombre de jours avant le prochain jour férié
 
-Informations diverses
+### Informations diverses
 
 * saison actuelle ('Winter', 'Spring', 'Summer', 'Fall')
 
